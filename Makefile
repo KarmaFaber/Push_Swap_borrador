@@ -15,9 +15,11 @@ RESET   := \033[0m
 
 NAME        := push_swap
 CC          := cc
-CFLAGS      := -Wall -Wextra -Werror
+CFLAGS      := -Wall -Wextra -Werror $(SANITIZERS)
 RM          := rm -rf
+
 VALGRIND := valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-limit=no --log-file=test/valgrind_outputs/valgrind_output_$(shell date +%Y%m%d_%H%M%S).log
+SANITIZERS := -fsanitize=address -fsanitize=undefined -fsanitize=leak -fsanitize=thread -g
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Libft Variables ▢───▣───◉•◉───▣───▢◇▢───▣──◉#
 
@@ -68,6 +70,14 @@ valgrind: $(NAME)
 clean_valgrind:
 	test/valgrind_outputs/./clean_valgrind.sh
 
+#◉───▣───▢◇▢───▣───◉•◉───▣───▢    Sanitizer   ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
+
+sanitizer: $(NAME)
+	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──Running program with Sanitizers...──╌╌➣⋆➣╌╌──$(RESET)"
+	@./$(NAME)
+	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──Sanitizer run complete! Check your output for errors. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
+
+
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢   Norminette   ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
 norm:
@@ -84,4 +94,4 @@ test:
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Phony targets  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-.PHONY: all clean fclean re valgrind clean_valgrind norm test
+.PHONY: all clean fclean re valgrind clean_valgrind sanitizer norm test
