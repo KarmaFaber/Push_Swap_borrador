@@ -6,23 +6,21 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:44 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/11/29 10:33:19 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/11/29 11:31:18 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief 
+ * @brief
  *
- * @param 
- * @return 
+ * @param
+ * @return
  */
 
-int main (void)
+int	main(void)
 {
-
-    ft_printf("hola\n");
-    
-    return (0);
+	ft_printf("hola\n");
+	return (0);
 }
