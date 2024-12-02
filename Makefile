@@ -29,7 +29,7 @@ INCLUDES_LIBFT := -I$(LIBFT_DIR)
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ push_swap srcs ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-PUSH_SWAP_SRCS:= push_swap.c
+PUSH_SWAP_SRCS:= main.c free.c utils.c
 PUSH_SWAP_OBJS	:= $(PUSH_SWAP_SRCS:.c=.o)
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢     rules      ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
@@ -63,7 +63,7 @@ re: fclean all
 valgrind: $(NAME)
 
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──Running Valgrind..──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──$(RESET)"
-	@$(VALGRIND) ./$(NAME) 
+	@$(VALGRIND) ./$(NAME) "11 22 33"
 	@test/valgrind_outputs/./open_valgrind_log.sh
 	@echo "$(CURRENT_COLOR)➵⤐╌╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣── Valgrind completed. Check valgrind_output.log for details. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
 	
