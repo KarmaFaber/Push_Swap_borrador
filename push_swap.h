@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:40 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/02 11:28:29 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/02 20:24:51 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,61 @@
 # include <stdio.h>  //printf
 # include <stdlib.h> //exit
 #include <stddef.h> // size_t
+# include <stdbool.h> //bollean
 
 //#➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌───struct:──╌╌➣⋆➣╌─╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔#
 
-typedef struct s_stack
+typedef struct s_stack_node
 {
-	int	*stack_a;
-    int	*stack_b;
-}	t_stack;
+	int value;                               //list
+    int	current_position;                    //list
+    
+
+    struct s_stack_node *target_node;        //list
+    struct s_stack_node *next;               //list
+    struct s_stack_node *prev;               //list
+    
+}	t_stack_node;
 
 
 //#➵⤐───╌╌➣⋆➣╌─╌──⤏➵•➵⤐───╌╌➣⋆➣╌╌──text:──╌╌➣⋆➣╌╌───⤏➵•➵⤐──╌╌➣⋆➣╌╌➔#
 
-// main.c
+// main.c (1/5)
 // int main (int argc, char **argv);
 
-//utils.c
-size_t malloc_size(char *argv);
-void malloc_and_aloccate_stack(t_stack *stack, char *argv, size_t malloc_size);
+//stack_utils.c (2/5)
+//append_node
+void check_and_init_list(t_stack_node **a, char **argv, bool argc_flag_2); //crear lista + nodos
 
 
-// free.c
-void free_and_exit_without_errors(t_stack *stack);
-void free_and_exit_with_errors(t_stack *stack);
-void free_stacks(t_stack *stack_a, t_stack *stack_b);
+// error_utils.c (5/5)
+void	error_exit(t_stack_node **a, char **argv, bool argc_flag_2);
+void	free_split_argv(char **argv);
+//error_syntax_argv
+//error_repetition_int
+void	free_stack_list(t_stack_node **stack);
+
+
+//swap_comand.c (/5)
+//swap
+//sa
+//sb
+//ss
+
+//push_comand.c (/5)
+//pa
+//pb
+
+//rotate_comand.c (/5)
+//ra
+//rb
+//rr
+
+//reverse_rotate_comand.c (/5)
+//rra
+//rrb
+//rrr
+
+
 
 #endif

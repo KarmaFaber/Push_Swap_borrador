@@ -29,7 +29,9 @@ INCLUDES_LIBFT := -I$(LIBFT_DIR)
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ push_swap srcs ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-PUSH_SWAP_SRCS:= main.c free.c utils.c
+PUSH_SWAP_SRCS	:= main.c error_utils.c stack_utils.c \
+				push_comand.c swap_comand.c reverse_rotate_comand.c rotate_comand.c \
+
 PUSH_SWAP_OBJS	:= $(PUSH_SWAP_SRCS:.c=.o)
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢     rules      ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
