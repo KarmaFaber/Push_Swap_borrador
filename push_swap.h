@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:40 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/03 09:59:47 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/03 12:38:19 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h> //exit
 #include <stddef.h> // size_t
 # include <stdbool.h> //bollean
+#include <limits.h> //limits
 
 //#➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌───struct:──╌╌➣⋆➣╌─╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔#
 
@@ -29,7 +30,7 @@ typedef struct s_stack_node
     int	current_position;                    //list
     
     
-    //struct t_stack_node *position;                 //para testeo- imprimir la lista enlazada- print_list
+
     struct s_stack_node *target_node;        //list
     struct s_stack_node *next;               //list - ok
     struct s_stack_node *prev;               //list - ok
@@ -58,25 +59,32 @@ int error_repetition_int (t_stack_node *a, int number);
 void	free_stack_list(t_stack_node **stack);
 
 
-//swap_comand.c (/5)
-//swap
-//sa
-//sb
-//ss
+//swap_command.c (4/5)
+//static void swap (t_stack_node **list);
+void sa(t_stack_node **a);
+void sb(t_stack_node **b);
+void ss(t_stack_node **a, t_stack_node **b);
 
-//push_comand.c (/5)
-//pa
-//pb
 
-//rotate_comand.c (/5)
-//ra
-//rb
-//rr
+//push_command.c (3/5)
+//static void push (t_stack_node **dest, t_stack_node **src);
+void pa(t_stack_node **a, t_stack_node **b);
+void pb (t_stack_node **b, t_stack_node **a);
 
-//reverse_rotate_comand.c (/5)
-//rra
-//rrb
-//rrr
+
+//rotate_command.c (4/5)
+//static void	rotate(t_stack_node **list);
+void ra (t_stack_node **a);
+void rb (t_stack_node **b);
+void rr (t_stack_node **a, t_stack_node **b);
+
+
+//reverse_rotate_comand.c (4/5)
+//static void	reverse_rotate(t_stack_node **list);
+void	rra(t_stack_node **a);
+void	rrb(t_stack_node **b);
+void	rrr(t_stack_node **a, t_stack_node **b);
+
 
 
 
