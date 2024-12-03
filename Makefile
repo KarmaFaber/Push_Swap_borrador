@@ -18,7 +18,7 @@ CC          := cc
 CFLAGS      := -Wall -Wextra -Werror $(SANITIZERS)
 RM          := rm -rf
 
-VALGRIND := valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-limit=no --log-file=test/valgrind_outputs/valgrind_output_$(shell date +%Y%m%d_%H%M%S).log
+VALGRIND := valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-limit=no --log-file=test/valgrind_outputs/valgrind_output_$(shell date +%Y%m%d_%H%M%S).log -s
 SANITIZERS := -fsanitize=address -fsanitize=undefined -fsanitize=leak -fsanitize=thread -g
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Libft Variables ▢───▣───◉•◉───▣───▢◇▢───▣──◉#
@@ -66,7 +66,7 @@ re: fclean all
 valgrind: $(NAME)
 
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──Running Valgrind..──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──$(RESET)"
-	@$(VALGRIND) ./$(NAME) 11 22 33 44 55 66 77 88 99 
+	@-$(VALGRIND) ./$(NAME) "11 22 66 44 55 66"
 	@test/valgrind_outputs/./open_valgrind_log.sh
 	@echo "$(CURRENT_COLOR)➵⤐╌╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣── Valgrind completed. Check valgrind_output.log for details. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
 	
