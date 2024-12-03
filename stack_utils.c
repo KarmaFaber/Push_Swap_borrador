@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 10:30:39 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/03 10:53:28 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/03 17:59:52 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void check_and_init_list(t_stack_node **a, char **argv, bool argc_flag_2)
     int i;
 
     i=0;
-    //printf("entrando en check_and_init_list\n");
     while(argv[i])
     {
         
@@ -100,7 +99,7 @@ void check_and_init_list(t_stack_node **a, char **argv, bool argc_flag_2)
     }
     if(argc_flag_2)
         free_split_argv(argv);
-    //printf("saliendo de check_and_init_list\n");
+    
 }
 
 /**
