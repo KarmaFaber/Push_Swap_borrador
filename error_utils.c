@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 09:14:24 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/02 20:14:30 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/03 10:37:27 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,16 @@ void	free_split_argv(char **argv)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	if (argv == NULL || *argv == NULL)
 		return ;
+		
 	while (argv[i])
-		free(argv[i++]);
-	free(argv - 1);
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
 }
 
 
@@ -55,7 +59,20 @@ void	free_split_argv(char **argv)
  * @param
  * @return
  */
-//error_syntax_argv
+
+int error_syntax_argv (char *argv_nbr)
+{
+	if(!(*argv_nbr == '+' || *argv_nbr == '-' || (*argv_nbr >= '0' && *argv_nbr <='9')))
+		return(1);
+	if ((*argv_nbr == '+' || *argv_nbr == '-') && !(argv_nbr[1] >= '0' && argv_nbr[1] <= '9'))
+		return (1);
+	while (*++argv_nbr)
+	{
+		if (!(*argv_nbr >= '0' && *argv_nbr <= '9'))
+			return (1);
+	}
+	return (0);
+}
 
 
 
@@ -67,8 +84,18 @@ void	free_split_argv(char **argv)
  * @return
  */
 
-//error_repetition_int
-
+int error_repetition_int (t_stack_node *a, int number)
+{
+	if (a == NULL)
+		return (0);
+	while (a)
+	{
+		if (a->value == number)
+			return (1);
+		a=a->next;
+	}
+	return (0);
+}
 
 /**
  * @brief

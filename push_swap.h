@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:40 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/02 20:24:51 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/03 09:59:47 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@
 
 typedef struct s_stack_node
 {
-	int value;                               //list
+	int value;                               //list -ok
     int	current_position;                    //list
     
-
+    
+    //struct t_stack_node *position;                 //para testeo- imprimir la lista enlazada- print_list
     struct s_stack_node *target_node;        //list
-    struct s_stack_node *next;               //list
-    struct s_stack_node *prev;               //list
+    struct s_stack_node *next;               //list - ok
+    struct s_stack_node *prev;               //list - ok
     
 }	t_stack_node;
 
@@ -41,16 +42,19 @@ typedef struct s_stack_node
 // main.c (1/5)
 // int main (int argc, char **argv);
 
-//stack_utils.c (2/5)
-//append_node
+//stack_utils.c (5/5)
+t_stack_node *find_last_node(t_stack_node *head);
+void add_node(t_stack_node **list, int number);
 void check_and_init_list(t_stack_node **a, char **argv, bool argc_flag_2); //crear lista + nodos
+int list_size (t_stack_node *list);
+t_stack_node *find_smales_value_list (t_stack_node *list);
 
 
 // error_utils.c (5/5)
 void	error_exit(t_stack_node **a, char **argv, bool argc_flag_2);
 void	free_split_argv(char **argv);
-//error_syntax_argv
-//error_repetition_int
+int error_syntax_argv (char *argv_nbr);
+int error_repetition_int (t_stack_node *a, int number);
 void	free_stack_list(t_stack_node **stack);
 
 

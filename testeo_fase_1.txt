@@ -1,0 +1,31 @@
+------------------------------OK:----------------------------------
+
+./push_swap "11 22 33 44 55 66" (ok)
+./push_swap 11 22 33 44 55 66   (ok)
+
+------------------------------Error\n:-----------------------------
+./push_swap ""          (ok)
+./push_swap 0 one 2 3       (ok)
+./push_swap 11 22 66 44 55 66 (ok)
+./push_swap "11 22 66 44 55 66" (ok)
+
+
+./push_swap 11 11 22 33 44  (ok)
+./push_swap "11 11 22 33 44"  (ok)
+
+
+
+-------------------------------Valgrind: OK----------------------------
+valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap 11 22 33 44 55 66 
+valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap "11 22 33 44 55 66"
+
+
+
+-------------------------------Valgrind: Error\n----------------------------
+valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap ""
+valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap 0 one 2 3
+valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap 11 22 66 44 55 66
+valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap "11 22 66 44 55 66"
+
+
+
