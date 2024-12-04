@@ -31,6 +31,7 @@ INCLUDES_LIBFT := -I$(LIBFT_DIR)
 
 PUSH_SWAP_SRCS	:= main.c error_utils.c stack_utils.c \
 				push_command.c swap_command.c reverse_rotate_command.c rotate_command.c \
+				push_swap_utils.c 
 
 PUSH_SWAP_OBJS	:= $(PUSH_SWAP_SRCS:.c=.o)
 
@@ -67,7 +68,7 @@ valgrind: $(NAME)
 
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──Running Valgrind..──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──$(RESET)"
 #	@-$(VALGRIND) ./$(NAME) "11 22 33 44 55 66 0"
-	@-$(VALGRIND) ./$(NAME) 11 22 33 44 55 66 0
+	@-$(VALGRIND) ./$(NAME) 22 11
 	@test/valgrind_outputs/./open_valgrind_log.sh
 	@echo "$(CURRENT_COLOR)➵⤐╌╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣── Valgrind completed. Check valgrind_output.log for details. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
 	

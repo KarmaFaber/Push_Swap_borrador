@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:40 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/03 12:38:19 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/04 12:20:51 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,10 @@ void rr (t_stack_node **a, t_stack_node **b);
 void	rra(t_stack_node **a);
 void	rrb(t_stack_node **b);
 void	rrr(t_stack_node **a, t_stack_node **b);
+
+//push_swap_utils.c (/5)
+int check_stack_is_ordened(t_stack_node *list); //(0 false, 1 frue)
+void push_swap (t_stack_node **list);
 
 
 

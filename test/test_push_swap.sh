@@ -1,5 +1,17 @@
 #!/bin/bash
-lista totalmente ordenada:
+
+#lista totalmente ordenada -> 10 num:
+11 22 33 44 55 66 77 88 99 100
+
+#lista totalmente desordenada -> 10 num:
+33 55 99 66 100 88 22 77 44 11
+
+
+#lista ligeramente desordenada -> 10 num:
+11 22 33 55 44 66 77 88 99 100
+
+
+#lista totalmente ordenada:
 int sorted_set[100] = {
     INT_MIN, -2147483424, -2147482944, -2147482464, -2147481984, 
     -2147481504, -2147481024, -2147480544, -2147480064, -2147479584,
@@ -23,7 +35,7 @@ int sorted_set[100] = {
 };
 
 
-Baja dificultad: Conjunto 1 (Casi ordenado).
+#Baja dificultad: Conjunto 1 (Casi ordenado).
 int low_difficulty[100] = {
     INT_MIN, -2147483646, -2147483645, -2147483644, -2147483643,
     -2147483642, -2147483641, -2147483640, -2147483639, -2147483638,
@@ -47,7 +59,7 @@ int low_difficulty[100] = {
 };
 
 
-Media dificultad: Conjunto 2 (Desorden aleatorio).
+#Media dificultad: Conjunto 2 (Desorden aleatorio).
 int medium_difficulty[100] = {
     INT_MAX, INT_MIN, -1424, 239847, -894, 999, -657394, 39457, 28472, 3000,
     -28374, -235, 894, -6593, 8482, -2000, 40598, -12345, 0, 5432,
@@ -62,7 +74,7 @@ int medium_difficulty[100] = {
 };
 
 
-Conjuntos de Dificultad Media (Desorden Aleatorio)
+#Conjuntos de Dificultad Media (Desorden Aleatorio)
 int medium_difficulty1[100] = {
     -238, 482, -394, 384, -283, 593, -128, 837, -475, 1024,
     -947, 398, -948, 239, -485, 594, -394, 204, -483, 348,
@@ -77,7 +89,7 @@ int medium_difficulty1[100] = {
 };
 
 
-Conjuntos de Dificultad Media (Desorden Aleatorio)
+#Conjuntos de Dificultad Media (Desorden Aleatorio)
 int medium_difficulty2[100] = {
     203, -582, 348, -394, 239, -485, 1039, -283, 590, -394,
     1048, -293, 487, -394, 384, -293, 720, -238, 384, -485,
@@ -92,7 +104,7 @@ int medium_difficulty2[100] = {
 };
 
 
-Alta dificultad: Conjunto 3 (Orden inverso).
+#Alta dificultad: Conjunto 3 (Orden inverso).
 int high_difficulty[100] = {
     INT_MAX, 2147483646, 2147483645, 2147483644, 2147483643, 2147483642,
     2147483641, 2147483640, 2147483639, 2147483638, 2147483637, 2147483636,
@@ -112,7 +124,7 @@ int high_difficulty[100] = {
 };
 
 
-Dificultad Alta (Desorden Aleatorio)
+#Dificultad Alta (Desorden Aleatorio)
 int high_difficulty1[100] = {
     INT_MIN, 8374, -2938, 456, -9283, 934, -123, 459, 890, -485,
     1024, -847, 593, -248, 3847, -4938, 720, -815, 999, -393,
@@ -126,7 +138,7 @@ int high_difficulty1[100] = {
 };
 
 
-Dificultad Alta (Desorden Aleatorio)
+#Dificultad Alta (Desorden Aleatorio)
 int high_difficulty2[100] = {
     593, -1238, 847, -483, 398, INT_MIN, 204, -394, 720, -582,
     128, -475, 349, -937, 539, -2847, 594, -920, 820, -948,
