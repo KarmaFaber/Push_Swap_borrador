@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:44 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/05 08:24:29 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/05 08:31:36 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,10 @@ int	main(int argc, char **argv)
 
 	ft_printf("---------lista a--------\n");
 	print_list(a);
-	check_stack_is_ordened(a);
+	check_stack_is_ordened(&a);
 	ft_printf("---------fin de lista a--------\n\n");
-	
+
+/*
 	ft_printf("---------lista a: buscar smallest--------\n");
 	t_stack_node *smallest_node= find_smales_value_list(a);
 	
@@ -76,7 +77,7 @@ int	main(int argc, char **argv)
 	}
 	ft_printf("---------fin lista a: buscar smallest--------\n\n");
 
-	
+*/
 
 //--------------------------2 -fin test- init list and chaeck argv format----------------------------------------------------	
 	//--------------------------3- comands------------------------
@@ -93,9 +94,11 @@ int	main(int argc, char **argv)
 	ft_printf("---------lista a--------\n");
 	print_list(a);
 	ft_printf("---------fin de lista a--------\n\n");
-	ft_printf("---------lista b--------\n");
-	print_list(b);
-	ft_printf("---------fin de lista b--------\n\n");
+
+	
+	//ft_printf("---------lista b--------\n");
+	//print_list(b);
+	//ft_printf("---------fin de lista b--------\n\n");
 /*
 	pa (&a, &b);
 	ft_printf("---------lista a--------\n");
@@ -150,7 +153,7 @@ int	main(int argc, char **argv)
 //-------------------------3-fin test-comands----------------------------------------------------
 	//--------------------------4- algorithm------------------------
 	if(!check_stack_is_ordened(&a))
-		push_swap(a);
+		push_swap(&a);
 	ft_printf("---------lista a--------\n");
 	print_list(a);
 	ft_printf("---------fin de lista a--------\n\n");
