@@ -64,7 +64,7 @@ re: fclean all
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢    Valgrind    ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
 
-valgrind: $(NAME)
+valgrind: all
 
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──Running Valgrind..──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──$(RESET)"
 #	@-$(VALGRIND) ./$(NAME) "11 22 33 44 55 66 0"
@@ -77,7 +77,7 @@ clean_valgrind:
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢    Sanitizer   ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-sanitizer: $(NAME)
+sanitizer: all
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──Running program with Sanitizers...──╌╌➣⋆➣╌╌──$(RESET)"
 	@./$(NAME)
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──Sanitizer run complete! Check your output for errors. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
