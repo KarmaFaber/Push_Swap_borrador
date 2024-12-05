@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:44 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/04 12:19:21 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/05 08:24:29 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ void print_list(t_stack_node *head)
 int	main(int argc, char **argv)
 {
 	t_stack_node *a;
-	t_stack_node *b;
+	//t_stack_node *b;
 	
 	a = NULL;
-	b = NULL;
+	//b = NULL;
 	//--------------------------1 - check argv-------------------------
 	if ((argc == 1) || (argc == 2 && !argv[1][0]))
 		return (1);
@@ -149,7 +149,7 @@ int	main(int argc, char **argv)
 
 //-------------------------3-fin test-comands----------------------------------------------------
 	//--------------------------4- algorithm------------------------
-	if(!check_stack_is_ordened(a))
+	if(!check_stack_is_ordened(&a))
 		push_swap(a);
 	ft_printf("---------lista a--------\n");
 	print_list(a);
@@ -164,6 +164,6 @@ int	main(int argc, char **argv)
 	//--------------------------5-free------------------------
 	
 	free_stack_list(&a);
-	free_stack_list(&b);			//quitar??
+	//free_stack_list(&b);			//quitar??
 	return (0);
 }

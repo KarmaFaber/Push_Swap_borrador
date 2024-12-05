@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_comand.c                                      :+:      :+:    :+:   */
+/*   swap_command.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:20:06 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/03 11:57:00 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/05 08:14:24 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@
  * @return
  */
 
-static void swap (t_stack_node **head)
+static void	swap(t_stack_node **head)
 {
-    int size;
+	int	size;
 
-    size= list_size(*head);
-    if(*head == NULL || head == NULL || size == 1)
-        return;
-    *head = (*head)->next;
+	size = list_size(*head);
+	if (*head == NULL || head == NULL || size == 1)
+		return ;
+	*head = (*head)->next;
 	(*head)->prev->prev = *head;
 	(*head)->prev->next = (*head)->next;
 	if ((*head)->next)
 		(*head)->next->prev = (*head)->prev;
 	(*head)->next = (*head)->prev;
-	(*head)->prev = NULL;    
+	(*head)->prev = NULL;
 }
 
 /**
@@ -42,11 +42,10 @@ static void swap (t_stack_node **head)
  * @return
  */
 
-void sa(t_stack_node **a)
+void	sa(t_stack_node **a)
 {
-    swap(a);
-    write(1, "sa\n", 3);
-    
+	swap(a);
+	write(1, "sa\n", 3);
 }
 /**
  * @brief
@@ -55,10 +54,10 @@ void sa(t_stack_node **a)
  * @return
  */
 
-void sb(t_stack_node **b)
+void	sb(t_stack_node **b)
 {
-    swap(b);
-    write(1, "sb\n", 3);
+	swap(b);
+	write(1, "sb\n", 3);
 }
 
 /**
@@ -68,9 +67,9 @@ void sb(t_stack_node **b)
  * @return
  */
 
-void ss(t_stack_node **a, t_stack_node **b)
+void	ss(t_stack_node **a, t_stack_node **b)
 {
-    swap(a);
+	swap(a);
 	swap(b);
 	write(1, "ss\n", 3);
 }
