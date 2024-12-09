@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_comand.c                                      :+:      :+:    :+:   */
+/*   push_command.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:22:10 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/03 12:10:59 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/09 11:46:46 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ static void push (t_stack_node **dest, t_stack_node **src)
 
     t_stack_node *node_to_push;
 
-    if (*src == NULL)
-    {
-		return ;
-    }
+    if (!src || !*src)
+	{
+	    return;
+	}
 	node_to_push = *src;
 	*src = (*src)->next;
 	if (*src)

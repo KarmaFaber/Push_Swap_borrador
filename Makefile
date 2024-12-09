@@ -31,7 +31,7 @@ INCLUDES_LIBFT := -I$(LIBFT_DIR)
 
 PUSH_SWAP_SRCS	:= main.c error_utils.c stack_utils.c \
 				push_command.c swap_command.c reverse_rotate_command.c rotate_command.c \
-				push_swap_utils.c 
+				push_swap_utils.c init_list_utils.c
 
 PUSH_SWAP_OBJS	:= $(PUSH_SWAP_SRCS:.c=.o)
 
@@ -67,13 +67,13 @@ re: fclean all
 valgrind: all
 
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──Running Valgrind..──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──$(RESET)"
-#	@-$(VALGRIND) ./$(NAME) "11 22 33 44 55 66 0"
-	@-$(VALGRIND) ./$(NAME) 22 11
-	@test/valgrind_outputs/./open_valgrind_log.sh
+#	@-$(VALGRIND) ./$(NAME) "101 88 -22 22 11 77 44 33 55 66"
+	@-$(VALGRIND) ./$(NAME) 101 88 -22 22 11 77 44 33 55 66 
+	@test/hs_files/./open_valgrind_log.sh
 	@echo "$(CURRENT_COLOR)➵⤐╌╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣── Valgrind completed. Check valgrind_output.log for details. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
 	
 clean_valgrind:
-	test/valgrind_outputs/./clean_valgrind.sh
+	test/hs_files/./clean_valgrind.sh
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢    Sanitizer   ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
@@ -94,16 +94,20 @@ norm:
 
 test: all
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── Starting test: ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
-	@test/./test_push_swap.sh
+	@test/hs_files/./test_push_swap.sh
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── End of test. ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
+
+clean_test:
+	test/hs_files/./clean_test.sh
+
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢  cheker_linux  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
 cheker_linux: 
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── Starting checker_linux: ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
-	@test/./checker_linux
+	@test/hs_files/./checker_linux
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── End of checker_linux. ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Phony targets  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-.PHONY: all clean fclean re valgrind clean_valgrind sanitizer norm test cheker_linux
+.PHONY: all clean fclean re valgrind clean_valgrind clean_test sanitizer norm test cheker_linux

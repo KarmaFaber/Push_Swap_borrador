@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 09:14:24 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/03 10:37:27 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/09 11:29:43 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	free_stack_list(t_stack_node **stack)
 	t_stack_node	*temp;
 	t_stack_node	*current;
 
-	if (NULL == stack)
+	if (stack == NULL)
 		return ;
 	current = *stack;
 	while (current)

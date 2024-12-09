@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 10:30:39 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/03 17:59:52 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/09 12:03:34 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,87 +20,16 @@
  * @return
  */
 
-t_stack_node *find_last_node(t_stack_node *head)
+t_stack_node *find_last_node(t_stack_node *list)
 {
-    if(head == NULL)
+    if(list == NULL)
         return (NULL);
-    while(head-> next)
-        head = head->next;
-    return (head);
+    while(list-> next)
+        list = list->next;
+    return (list);
     
 }
 
-/**
- * @brief
- *
- * @param
- * @return
- */
-
-void add_node(t_stack_node **list, int number)
-{
-    t_stack_node *node;
-    t_stack_node *last_node;
-
-    if (list == NULL)
-        return;
-    node = malloc(sizeof(t_stack_node));
-    if (node == NULL)
-        return;
-    node->next =NULL;
-    node->value = number;
-    if (*list == NULL)
-    {
-        *list = node;
-        node->prev =NULL;
-    }
-    else
-    {
-        last_node = find_last_node(*list);
-        last_node->next =node;
-        node->prev = last_node;
-    }
-}
-
-
-/**
- * @brief
- *
- * @param
- * @return
- * 
- * 🏁 Flag is useful cause if true, i have the argv in the HEAP to free 
- * ya que lista ya fue creada y no necesitamos esos datos
- * 
- */
-
-void check_and_init_list(t_stack_node **a, char **argv, bool argc_flag_2)
-{
-    long number;
-    int i;
-
-    i=0;
-    while(argv[i])
-    {
-        
-        if(error_syntax_argv(argv[i]))
-            error_exit(a, argv, argc_flag_2);
-            
-        number= ft_atol(argv[i]);
-
-        if (number > INT_MAX || number < INT_MIN)
-            error_exit(a, argv, argc_flag_2);
-            
-        if (error_repetition_int(*a, (int)number))
-			error_exit(a, argv, argc_flag_2);
-        
-        add_node(a, (int)number);
-        ++i;
-    }
-    if(argc_flag_2)
-        free_split_argv(argv);
-    
-}
 
 /**
  * @brief
@@ -132,7 +61,7 @@ int list_size (t_stack_node *list)
  * @return
  */
 
-t_stack_node *find_smales_value_list(t_stack_node *list)
+t_stack_node *find_smalles_value_list(t_stack_node *list)
 {
     long smallest;
     t_stack_node *smallest_node;
@@ -155,3 +84,64 @@ t_stack_node *find_smales_value_list(t_stack_node *list)
 }
 
 
+/**
+ * @brief
+ *
+ * @param
+ * @return
+ */
+
+t_stack_node *find_biggest_value_list(t_stack_node *list)
+{
+    long biggest;
+    t_stack_node *biggest_node;
+
+    if (list == NULL)  
+        return(NULL);
+    biggest =LONG_MIN;
+    while(list)
+    {
+        if(list->value > biggest)
+        {
+            biggest = list->value;
+            biggest_node=list;
+        }
+        list=list->next;  
+    }
+
+    return(biggest_node);
+
+}
+
+
+/**
+ * @brief
+ *
+ * @param
+ * @return
+ */
+
+void order_tree(t_stack_node **head)
+{
+    if (!head || !*head) 
+        return;
+
+    if ((list_size(*head) != 3) || (check_stack_is_ordened(head)))
+        return;
+
+    if (find_biggest_value_list(*head) == find_last_node(*head))
+        sa(head);
+    else if (find_smalles_value_list(*head) == *head)
+    {
+        rra(head);
+        sa(head);
+    }
+    else if ((find_smalles_value_list(*head) == find_last_node(*head)) &&
+             (find_biggest_value_list(*head) == *head))
+    {
+        sa(head);
+        rra(head);
+    }
+    else
+        rra(head);
+}

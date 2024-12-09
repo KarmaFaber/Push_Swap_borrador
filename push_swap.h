@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:40 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/05 08:20:33 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/09 11:57:25 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_stack_node
 {
 	int value;                               //list -ok
     int	current_position;                    //list
+    int index;                               //list
     
     
 
@@ -43,12 +44,18 @@ typedef struct s_stack_node
 // main.c (1/5)
 // int main (int argc, char **argv);
 
-//stack_utils.c (5/5)
-t_stack_node *find_last_node(t_stack_node *head);
+
+// init_list_utils.c (2/5)
 void add_node(t_stack_node **list, int number);
 void check_and_init_list(t_stack_node **a, char **argv, bool argc_flag_2); //crear lista + nodos
+
+
+//stack_utils.c (5/5)
+t_stack_node *find_last_node(t_stack_node *list);
 int list_size (t_stack_node *list);
-t_stack_node *find_smales_value_list (t_stack_node *list);
+t_stack_node *find_smalles_value_list (t_stack_node *list);
+t_stack_node *find_biggest_value_list(t_stack_node *list);
+void order_tree(t_stack_node **head);
 
 
 // error_utils.c (5/5)
@@ -87,7 +94,8 @@ void	rrr(t_stack_node **a, t_stack_node **b);
 
 //push_swap_utils.c (/5)
 int check_stack_is_ordened(t_stack_node **head); //(0 false, 1 frue)
-void push_swap (t_stack_node **list);
+void	push_swap(t_stack_node **a, t_stack_node **b);
+
 
 
 
