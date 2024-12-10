@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:09:48 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/09 13:03:04 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/10 11:07:20 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
  * @return
  */
 
-int check_stack_is_ordened(t_stack_node **head)
+int check_stack_is_ordened(t_stack_node **list)
 {
 	t_stack_node	*current;
 
-	if (head == NULL || *head == NULL)
+	if (list == NULL || *list == NULL)
 	{
 		//ft_printf("\033[0;32m✅ SUCCESS: la lista está vacía o no existe (head == NULL o *head == NULL)\n\033[0m");
 		return (1);
 	}
-	current = *head;
+	current = *list;
 	while (current->next != NULL)
 	{
 		if (current->value > current->next->value)

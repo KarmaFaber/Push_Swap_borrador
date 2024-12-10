@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:40 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/09 11:57:25 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/10 11:07:09 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,15 @@ t_stack_node *find_last_node(t_stack_node *list);
 int list_size (t_stack_node *list);
 t_stack_node *find_smalles_value_list (t_stack_node *list);
 t_stack_node *find_biggest_value_list(t_stack_node *list);
-void order_tree(t_stack_node **head);
+void order_tree(t_stack_node **list);
 
 
 // error_utils.c (5/5)
-void	error_exit(t_stack_node **a, char **argv, bool argc_flag_2);
+void	error_exit(t_stack_node **list, char **argv, bool argc_flag_2);
 void	free_split_argv(char **argv);
 int error_syntax_argv (char *argv_nbr);
-int error_repetition_int (t_stack_node *a, int number);
-void	free_stack_list(t_stack_node **stack);
+int error_repetition_int (t_stack_node *list, int number);
+void	free_stack_list(t_stack_node **list);
 
 
 //swap_command.c (4/5)
@@ -93,7 +93,7 @@ void	rrb(t_stack_node **b);
 void	rrr(t_stack_node **a, t_stack_node **b);
 
 //push_swap_utils.c (/5)
-int check_stack_is_ordened(t_stack_node **head); //(0 false, 1 frue)
+int check_stack_is_ordened(t_stack_node **list); //(0 false, 1 frue)
 void	push_swap(t_stack_node **a, t_stack_node **b);
 
 

@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:20:06 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/05 08:14:24 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/10 11:06:32 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@
  * @return
  */
 
-static void	swap(t_stack_node **head)
+static void	swap(t_stack_node **list)
 {
 	int	size;
 
-	size = list_size(*head);
-	if (*head == NULL || head == NULL || size == 1)
+	size = list_size(*list);
+	if (*list == NULL || list == NULL || size == 1)
 		return ;
-	*head = (*head)->next;
-	(*head)->prev->prev = *head;
-	(*head)->prev->next = (*head)->next;
-	if ((*head)->next)
-		(*head)->next->prev = (*head)->prev;
-	(*head)->next = (*head)->prev;
-	(*head)->prev = NULL;
+	*list = (*list)->next;
+	(*list)->prev->prev = *list;
+	(*list)->prev->next = (*list)->next;
+	if ((*list)->next)
+		(*list)->next->prev = (*list)->prev;
+	(*list)->next = (*list)->prev;
+	(*list)->prev = NULL;
 }
 
 /**
