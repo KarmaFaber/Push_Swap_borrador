@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:22:56 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/03 12:33:50 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:52:07 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	reverse_rotate(t_stack_node **list)
 	int				size;
 
 	size = list_size(*list);
-	if (*list == NULL ||list == NULL || size == 1)
+	if (*list == NULL || list == NULL || size == 1)
 		return ;
 	last = find_last_node(*list);
 	last->prev->next = NULL;

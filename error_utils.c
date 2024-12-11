@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 09:14:24 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/10 11:05:39 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:46:38 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	error_exit(t_stack_node **list, char **argv, bool argc_flag_2)
 		free_split_argv(argv);
 	write(2, "Error\n", 6);
 	exit(1);
-	
 }
 
 /**
@@ -43,7 +42,6 @@ void	free_split_argv(char **argv)
 	i = 0;
 	if (argv == NULL || *argv == NULL)
 		return ;
-		
 	while (argv[i])
 	{
 		free(argv[i]);
@@ -52,7 +50,6 @@ void	free_split_argv(char **argv)
 	free(argv);
 }
 
-
 /**
  * @brief
  *
@@ -60,11 +57,13 @@ void	free_split_argv(char **argv)
  * @return
  */
 
-int error_syntax_argv (char *argv_nbr)
+int	error_syntax_argv(char *argv_nbr)
 {
-	if(!(*argv_nbr == '+' || *argv_nbr == '-' || (*argv_nbr >= '0' && *argv_nbr <='9')))
-		return(1);
-	if ((*argv_nbr == '+' || *argv_nbr == '-') && !(argv_nbr[1] >= '0' && argv_nbr[1] <= '9'))
+	if (!(*argv_nbr == '+' || *argv_nbr == '-' || (*argv_nbr >= '0'
+				&& *argv_nbr <= '9')))
+		return (1);
+	if ((*argv_nbr == '+' || *argv_nbr == '-') && !(argv_nbr[1] >= '0'
+			&& argv_nbr[1] <= '9'))
 		return (1);
 	while (*++argv_nbr)
 	{
@@ -74,9 +73,6 @@ int error_syntax_argv (char *argv_nbr)
 	return (0);
 }
 
-
-
-
 /**
  * @brief
  *
@@ -84,7 +80,7 @@ int error_syntax_argv (char *argv_nbr)
  * @return
  */
 
-int error_repetition_int (t_stack_node *list, int number)
+int	error_repetition_int(t_stack_node *list, int number)
 {
 	if (list == NULL)
 		return (0);
@@ -92,7 +88,7 @@ int error_repetition_int (t_stack_node *list, int number)
 	{
 		if (list->value == number)
 			return (1);
-		list=list->next;
+		list = list->next;
 	}
 	return (0);
 }
@@ -120,5 +116,3 @@ void	free_stack_list(t_stack_node **list)
 	}
 	*list = NULL;
 }
-
-

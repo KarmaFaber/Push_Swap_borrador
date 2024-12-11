@@ -28,7 +28,7 @@ INCLUDES_LIBFT := -I$(LIBFT_DIR)
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ push_swap srcs ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-PUSH_SWAP_SRCS	:= main.c error_utils.c stack_utils.c \
+PUSH_SWAP_SRCS	:= push_swap.c error_utils.c stack_utils.c \
 				push_command.c swap_command.c reverse_rotate_command.c rotate_command.c \
 				push_swap_utils.c init_list_utils.c algorithm_utils.c init_a_to_b.c \
 				init_b_to_a.c 
@@ -63,7 +63,6 @@ re: fclean all
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢    Valgrind    ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-
 valgrind: all
 
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──Running Valgrind..──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──$(RESET)"
@@ -82,6 +81,11 @@ norm:
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── Checking Norminette: ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
 	@norminette libft $(PUSH_SWAP_SRCS) push_swap.h
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── Norminette completed. Check your output for details. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
+
+#◉───▣───▢◇▢───▣───◉•◉───▣───▢   Format   ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
+
+format: 
+	c_formatter_42 $(PUSH_SWAP_SRCS) push_swap.h
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢      Test      ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
@@ -102,4 +106,4 @@ cheker_linux: all
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Phony targets  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-.PHONY: all clean fclean re valgrind clean_valgrind clean_test norm test cheker_linux
+.PHONY: all clean fclean re valgrind clean_valgrind clean_test format norm test cheker_linux

@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 08:13:01 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 13:24:56 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:46:00 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@
  * @return
  */
 
-int check_stack_is_ordened(t_stack_node **list)
+int	check_stack_is_ordened(t_stack_node **list)
 {
 	t_stack_node	*current;
 
 	if (list == NULL || *list == NULL)
 	{
-		//ft_printf("\033[0;32m✅ SUCCESS: la lista está vacía o no existe (head == NULL o *head == NULL)\n\033[0m");
 		return (1);
 	}
 	current = *list;
@@ -33,13 +32,11 @@ int check_stack_is_ordened(t_stack_node **list)
 	{
 		if (current->value > current->next->value)
 		{
-			//ft_printf("\033[1;31m🛑 ERROR: la lista está desordenada, hay que hacer cosas de unicornios locos (mensaje de checker)\n\033[0m");
 			return (0);
 		}
 		current = current->next;
 	}
-	//ft_printf("\033[0;32m✅ SUCCESS: la lista está ordenada\n\033[0m");
-	return (1); // Si no se encontró desorden, está ordenada.
+	return (1);
 }
 
 /**
@@ -49,21 +46,18 @@ int check_stack_is_ordened(t_stack_node **list)
  * @return
  */
 
-void order_three(t_stack_node **list)
+void	order_three(t_stack_node **list)
 {
-    if (!list || !*list) 
-        return;
-
-    if ((list_size(*list) != 3) || (check_stack_is_ordened(list)))
-        return;
-
-    if (find_biggest_value_list(*list) == *list)
-        ra(list);
-    else if((*list)->next == find_biggest_value_list(*list)) 
-        rra(list);
-    if ((*list)->value > (*list)->next->value)
-        sa(list);
-        
+	if (!list || !*list)
+		return ;
+	if ((list_size(*list) != 3) || (check_stack_is_ordened(list)))
+		return ;
+	if (find_biggest_value_list(*list) == *list)
+		ra(list);
+	else if ((*list)->next == find_biggest_value_list(*list))
+		rra(list);
+	if ((*list)->value > (*list)->next->value)
+		sa(list);
 }
 
 /**
@@ -73,26 +67,25 @@ void order_three(t_stack_node **list)
  * @return
  */
 
-void current_index(t_stack_node *list)
+void	current_index(t_stack_node *list)
 {
-    int i;
-    int median;
+	int	i;
+	int	median;
 
-    i=0;
-    if(list==NULL)
-        return;
-    median = list_size(list) / 2;
-    while(list)
-    {
-        list->index = i;
-        if(i <= median)
-            list->above_median=true;
-        else    
-            list->above_median=false;
-        list = list->next;
-        ++i;
-    }
-    
+	i = 0;
+	if (list == NULL)
+		return ;
+	median = list_size(list) / 2;
+	while (list)
+	{
+		list->index = i;
+		if (i <= median)
+			list->above_median = true;
+		else
+			list->above_median = false;
+		list = list->next;
+		i++;
+	}
 }
 /**
  * @brief
@@ -101,25 +94,26 @@ void current_index(t_stack_node *list)
  * @return
  */
 
-void	prep_for_push(t_stack_node **list, t_stack_node *top_node, char stack_name)
+void	prep_for_push(t_stack_node **list, t_stack_node *top_node,
+		char stack_name)
 {
-    while(*list != top_node)
-    {
-        if(stack_name== 'a')
-        {
-            if (top_node->above_median)
-                ra(list);
-            else
-                rra(list);
-        }
-        else if(stack_name == 'b')
-        {
-            if(top_node->above_median)
-                rb(list);
-            else
-                rrb(list);
-        }  
-    }
+	while (*list != top_node)
+	{
+		if (stack_name == 'a')
+		{
+			if (top_node->above_median)
+				ra(list);
+			else
+				rra(list);
+		}
+		else if (stack_name == 'b')
+		{
+			if (top_node->above_median)
+				rb(list);
+			else
+				rrb(list);
+		}
+	}
 }
 /**
  * @brief
@@ -128,7 +122,7 @@ void	prep_for_push(t_stack_node **list, t_stack_node *top_node, char stack_name)
  * @return
  */
 
-t_stack_node	*get_cheapest(t_stack_node *list) 
+t_stack_node	*get_cheapest(t_stack_node *list)
 {
 	if (!list)
 		return (NULL);

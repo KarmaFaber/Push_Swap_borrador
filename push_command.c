@@ -15,20 +15,19 @@
 /**
  * @brief
  *
- * 
+ *
  * 🚨 attention If stack empty (i.e. NULL)
  * @param
  * @return
  */
 
-static void push (t_stack_node **dest, t_stack_node **src)
+static void	push(t_stack_node **dest, t_stack_node **src)
 {
+	t_stack_node	*node_to_push;
 
-    t_stack_node *node_to_push;
-
-    if (!src || !*src)
+	if (!src || !*src)
 	{
-	    return;
+		return ;
 	}
 	node_to_push = *src;
 	*src = (*src)->next;
@@ -55,10 +54,10 @@ static void push (t_stack_node **dest, t_stack_node **src)
  * @return
  */
 
-void pa(t_stack_node **a, t_stack_node **b)
+void	pa(t_stack_node **a, t_stack_node **b)
 {
-    push(a, b);
-    write(1, "pa\n", 3);
+	push(a, b);
+	write(1, "pa\n", 3);
 }
 
 /**
@@ -68,8 +67,8 @@ void pa(t_stack_node **a, t_stack_node **b)
  * @return
  */
 
-void pb (t_stack_node **b, t_stack_node **a)
+void	pb(t_stack_node **b, t_stack_node **a)
 {
-    push(b, a);
+	push(b, a);
 	write(1, "pb\n", 3);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_comand.c                                    :+:      :+:    :+:   */
+/*   rotate_command.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:22:29 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/03 12:27:20 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:52:12 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ static void	rotate(t_stack_node **list)
  * @return
  */
 
-void ra (t_stack_node **a)
+void	ra(t_stack_node **a)
 {
-    rotate(a);
-    write(1, "ra\n", 3);
+	rotate(a);
+	write(1, "ra\n", 3);
 }
 
 /**
@@ -55,10 +55,10 @@ void ra (t_stack_node **a)
  * @return
  */
 
-void rb (t_stack_node **b)
+void	rb(t_stack_node **b)
 {
-    rotate(b);
-    write(1, "rb\n", 3);
+	rotate(b);
+	write(1, "rb\n", 3);
 }
 
 /**
@@ -68,9 +68,9 @@ void rb (t_stack_node **b)
  * @return
  */
 
-void rr (t_stack_node **a, t_stack_node **b)
+void	rr(t_stack_node **a, t_stack_node **b)
 {
-    rotate(a);
-    rotate(b);
-    write(1, "rr\n", 3);
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
 }
