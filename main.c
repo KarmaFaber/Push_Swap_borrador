@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:44 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/09 11:50:39 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:39:04 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,29 @@ int	main(int argc, char **argv)
 	//--------------------------4- algorithm------------------------
 	
 	if(!check_stack_is_ordened(&a))
-		push_swap(&a, &b);
-		
-	//check_stack_is_ordened(&a);
-	//check_stack_is_ordened(&b);
+	{
+		if(list_size(a)== 2)
+			sa(&a);
+		else if(list_size(a) == 3)
+			order_three(&a);
+		else
+			push_swap(&a, &b);
+	}
 	
-	ft_printf("---------lista a--------\n");
+//ver listas testeo -----------------------------------------------------------------------------------
+	ft_printf("\033[0;35m\nlista a \033[0m\n");
 	print_list(a);
-	ft_printf("---------fin de lista a--------\n\n");
+	ft_printf("\033[0;35mfin de lista a \n\033[0m\n");
 
-	ft_printf("---------lista b--------\n");
+	ft_printf("\033[0;34mlista b \033[0m\n");
 	print_list(b);
-	ft_printf("---------fin de lista b--------\n\n");
-
+	ft_printf("\033[0;34mfin de lista b \033[0m\n");
+	
+//ver listas fin testeo -----------------------------------------------------------------------------------
 
 	//--------------------------5-free------------------------
 	
 	free_stack_list(&a);
-	free_stack_list(&b);			//quitar??
+	free_stack_list(&b);			//quitar?? y liberar b en otro lado?
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:09:48 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/10 11:07:20 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:40:53 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,58 +19,28 @@
  * @return
  */
 
-int check_stack_is_ordened(t_stack_node **list)
-{
-	t_stack_node	*current;
-
-	if (list == NULL || *list == NULL)
-	{
-		//ft_printf("\033[0;32m✅ SUCCESS: la lista está vacía o no existe (head == NULL o *head == NULL)\n\033[0m");
-		return (1);
-	}
-	current = *list;
-	while (current->next != NULL)
-	{
-		if (current->value > current->next->value)
-		{
-			//ft_printf("\033[1;31m🛑 ERROR: la lista está desordenada, hay que hacer cosas de unicornios locos (mensaje de checker)\n\033[0m");
-			return (0);
-		}
-		current = current->next;
-	}
-	//ft_printf("\033[0;32m✅ SUCCESS: la lista está ordenada\n\033[0m");
-	return (1); // Si no se encontró desorden, está ordenada.
-}
-
-/**
- * @brief
- *
- * @param
- * @return
- */
-
 void	push_swap(t_stack_node **a, t_stack_node **b)
 {
-    
-    if (!a || !*a || !b)
-    {
-        ft_printf("\033[1;31m🛑 ERROR: pilla NULL en push_swap \n\033[0m");
-        return ;
-    }
-    
-    
-    if ((!check_stack_is_ordened(a)) && (list_size(*a) == 3))
-        order_tree(a);
-    else
-    {
-        while (list_size(*a) > 3)
-            pb (b, a); 
-		if (list_size(*a) == 3)
-        	order_tree(a);
-    }
+	int a_size;
 	
-	//ordenar b 
-	
-	
-        
+	a_size = list_size(*a);
+    if (a == NULL || *a == NULL || b == NULL)
+		return;
+    if ((!check_stack_is_ordened(a)) && (a_size-- > 3))
+		pb(b, a);
+	if ((!check_stack_is_ordened(a)) && (a_size-- > 3))
+		pb(b, a);
+	while((!check_stack_is_ordened(a)) && (a_size-- > 3))
+	{
+		//init_nodes_a
+		//move_a_to_b
+	}
+	order_three(a);
+	while(*b)
+	{
+		//init_nodes_b
+		//move_b_to_a
+	}
+	//current_index
+	//min_on_top
 }

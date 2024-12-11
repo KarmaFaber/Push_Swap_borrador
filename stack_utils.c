@@ -6,12 +6,11 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 10:30:39 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/10 11:03:58 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/11 08:38:55 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 /**
  * @brief
@@ -29,7 +28,6 @@ t_stack_node *find_last_node(t_stack_node *list)
     return (list);
     
 }
-
 
 /**
  * @brief
@@ -52,7 +50,6 @@ int list_size (t_stack_node *list)
     }
     return(count);
 }
-
 
 /**
  * @brief
@@ -83,7 +80,6 @@ t_stack_node *find_smalles_value_list(t_stack_node *list)
     return(smallest_node);
 }
 
-
 /**
  * @brief
  *
@@ -111,37 +107,4 @@ t_stack_node *find_biggest_value_list(t_stack_node *list)
 
     return(biggest_node);
 
-}
-
-
-/**
- * @brief
- *
- * @param
- * @return
- */
-
-void order_tree(t_stack_node **list)
-{
-    if (!list || !*list) 
-        return;
-
-    if ((list_size(*list) != 3) || (check_stack_is_ordened(list)))
-        return;
-
-    if (find_biggest_value_list(*list) == find_last_node(*list))
-        sa(list);
-    else if (find_smalles_value_list(*list) == *list)
-    {
-        rra(list);
-        sa(list);
-    }
-    else if ((find_smalles_value_list(*list) == find_last_node(*list)) &&
-             (find_biggest_value_list(*list) == *list))
-    {
-        sa(list);
-        rra(list);
-    }
-    else
-        rra(list);
 }
