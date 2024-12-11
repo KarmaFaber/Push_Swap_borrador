@@ -67,8 +67,9 @@ re: fclean all
 valgrind: all
 
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──Running Valgrind..──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──$(RESET)"
-#	@-$(VALGRIND) ./$(NAME) "-2057679221 -1997794923 393319166 100748158 -1830859106 -2102473863 -714623629 -1113552385 1861181184 -2085490410"
-	@-$(VALGRIND) ./$(NAME) -2057679221 -1997794923 393319166 100748158 -1830859106 -2102473863 -714623629 -1113552385 1861181184 -2085490410
+	@-$(VALGRIND) ./$(NAME) "-2057679221 -1997794923 393319166 100748158 -1830859106 -2102473863 -714623629 -1113552385 1861181184 -2085490410" | wc -l
+#	@-$(VALGRIND) ./$(NAME) -2057679221 -1997794923 393319166 100748158 -1830859106 -2102473863 -714623629 -1113552385 1861181184 -2085490410 | wc -l
+#	@-$(VALGRIND) ./$(NAME) -2057679221 -1997794923 393319166 100748158 -1830859106 -2102473863 -714623629 -1113552385 1861181184 -2085490410 
 	@test/hs_files/./open_valgrind_log.sh
 	@echo "$(CURRENT_COLOR)➵⤐╌╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣── Valgrind completed. Check valgrind_output.log for details. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
 	
@@ -84,27 +85,21 @@ norm:
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢      Test      ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-test_single: all
+test: all
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── Starting test: ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
 	@test/hs_files/./test_push_swap.sh
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── End of test. ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
 
-test_multiple_100:
-	@test/hs_files/./test_push_swap.sh <<< "2"
-	
-test_multiple_500:S
-	@test/hs_files/./test_push_swap.sh <<< "3"
-	
 clean_test:
 	test/hs_files/./clean_test.sh
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢  cheker_linux  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-cheker_linux: 
+cheker_linux: all
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── Starting checker_linux: ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
-	@test/hs_files/./checker_linux
+	@test/hs_files/./execute_checker_linux.sh
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── End of checker_linux. ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Phony targets  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-.PHONY: all clean fclean re valgrind clean_valgrind clean_test norm test_single cheker_linux
+.PHONY: all clean fclean re valgrind clean_valgrind clean_test norm test cheker_linux
