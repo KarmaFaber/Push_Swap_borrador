@@ -1,22 +1,26 @@
 #!/bin/bash
 
-# Define red color for warning message
+# Definir colores para mensajes
 RED='\033[1;31m'
+GREEN='\033[1;32m'
 RESET='\033[0m'
 
-# Warning message
-echo -e "${RED}🛑 Warning: Are you sure you want to delete test stats? (y/n)${RESET}"
-
-# Read user input
+# Mensaje de advertencia
+echo -e "${RED}⚠️  Warning: Are you sure you want to delete all test stats? (y/n)${RESET}"
 read -r confirm
 
-# Check if the user confirmed
+# Comprobar si el usuario confirmó
 if [[ "$confirm" == "y" || "$confirm" == "Y" ]]; then
-    echo -e "Deleting test stats log file..."
-    rm -f test/test_outputs/summary.log
-    rm -f test/test_outputs/command_output.log
-    rm -f test/test_outputs/generated_numbers.log
-    echo -e "test stats have been deleted."
+    echo -e "${GREEN}Deleting test stats...${RESET}"
+
+    # Eliminar archivos y directorios generados por los tests
+    rm -rf test/test_outputs/single_test
+    rm -rf test/test_outputs/multiple_tests_100
+    rm -rf test/test_outputs/multiple_tests_500
+    rm -rf test/test_outputs/test_valgrind_outputs
+
+    # Confirmación de la eliminación
+    echo -e "${GREEN}All test stats have been deleted successfully.${RESET}"
 else
-    echo -e "Operation cancelled. No files were deleted."
+    echo -e "${RED}Operation cancelled. No files were deleted.${RESET}"
 fi

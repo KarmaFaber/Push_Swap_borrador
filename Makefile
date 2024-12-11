@@ -69,7 +69,6 @@ valgrind: all
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──Running Valgrind..──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──$(RESET)"
 #	@-$(VALGRIND) ./$(NAME) "-2057679221 -1997794923 393319166 100748158 -1830859106 -2102473863 -714623629 -1113552385 1861181184 -2085490410"
 	@-$(VALGRIND) ./$(NAME) -2057679221 -1997794923 393319166 100748158 -1830859106 -2102473863 -714623629 -1113552385 1861181184 -2085490410
-#	@-$(VALGRIND) ./$(NAME) -10 1 0 3 4 55 99 -22 77 100
 	@test/hs_files/./open_valgrind_log.sh
 	@echo "$(CURRENT_COLOR)➵⤐╌╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣── Valgrind completed. Check valgrind_output.log for details. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
 	
@@ -85,14 +84,19 @@ norm:
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢      Test      ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-test: all
+test_single: all
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── Starting test: ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
 	@test/hs_files/./test_push_swap.sh
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── End of test. ──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔$(RESET)"
 
+test_multiple_100:
+	@test/hs_files/./test_push_swap.sh <<< "2"
+	
+test_multiple_500:S
+	@test/hs_files/./test_push_swap.sh <<< "3"
+	
 clean_test:
 	test/hs_files/./clean_test.sh
-
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢  cheker_linux  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
@@ -103,4 +107,4 @@ cheker_linux:
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Phony targets  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-.PHONY: all clean fclean re valgrind clean_valgrind clean_test norm test cheker_linux
+.PHONY: all clean fclean re valgrind clean_valgrind clean_test norm test_single cheker_linux
