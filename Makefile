@@ -15,11 +15,10 @@ RESET   := \033[0m
 
 NAME        := push_swap
 CC          := cc
-CFLAGS      := -Wall -Wextra -Werror $(SANITIZERS)
+CFLAGS      := -Wall -Wextra -Werror 
 RM          := rm -rf
 
 VALGRIND := valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-limit=no --log-file=test/valgrind_outputs/valgrind_output_$(shell date +%Y%m%d_%H%M%S).log -s
-SANITIZERS := -fsanitize=address -fsanitize=undefined -fsanitize=leak -fsanitize=thread -g
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Libft Variables ▢───▣───◉•◉───▣───▢◇▢───▣──◉#
 
@@ -31,7 +30,8 @@ INCLUDES_LIBFT := -I$(LIBFT_DIR)
 
 PUSH_SWAP_SRCS	:= main.c error_utils.c stack_utils.c \
 				push_command.c swap_command.c reverse_rotate_command.c rotate_command.c \
-				push_swap_utils.c init_list_utils.c algorithm_utils.c 
+				push_swap_utils.c init_list_utils.c algorithm_utils.c init_a_to_b.c \
+				init_b_to_a.c 
 
 PUSH_SWAP_OBJS	:= $(PUSH_SWAP_SRCS:.c=.o)
 
@@ -67,21 +67,14 @@ re: fclean all
 valgrind: all
 
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──Running Valgrind..──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──$(RESET)"
-#	@-$(VALGRIND) ./$(NAME) "101 88 -22 22 11 77 44 33 55 66"
-	@-$(VALGRIND) ./$(NAME) 55 66 33 11 22
+#	@-$(VALGRIND) ./$(NAME) "-2057679221 -1997794923 393319166 100748158 -1830859106 -2102473863 -714623629 -1113552385 1861181184 -2085490410"
+	@-$(VALGRIND) ./$(NAME) -2057679221 -1997794923 393319166 100748158 -1830859106 -2102473863 -714623629 -1113552385 1861181184 -2085490410
+#	@-$(VALGRIND) ./$(NAME) -10 1 0 3 4 55 99 -22 77 100
 	@test/hs_files/./open_valgrind_log.sh
 	@echo "$(CURRENT_COLOR)➵⤐╌╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣── Valgrind completed. Check valgrind_output.log for details. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
 	
 clean_valgrind:
 	test/hs_files/./clean_valgrind.sh
-
-#◉───▣───▢◇▢───▣───◉•◉───▣───▢    Sanitizer   ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
-
-sanitizer: all
-	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──Running program with Sanitizers...──╌╌➣⋆➣╌╌──$(RESET)"
-	@./$(NAME)
-	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──Sanitizer run complete! Check your output for errors. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
-
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢   Norminette   ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
@@ -110,4 +103,4 @@ cheker_linux:
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Phony targets  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-.PHONY: all clean fclean re valgrind clean_valgrind clean_test sanitizer norm test cheker_linux
+.PHONY: all clean fclean re valgrind clean_valgrind clean_test norm test cheker_linux

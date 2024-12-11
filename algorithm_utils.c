@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 08:13:01 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 10:13:49 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:24:56 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,79 @@ void order_three(t_stack_node **list)
     if ((*list)->value > (*list)->next->value)
         sa(list);
         
+}
+
+/**
+ * @brief
+ *
+ * @param
+ * @return
+ */
+
+void current_index(t_stack_node *list)
+{
+    int i;
+    int median;
+
+    i=0;
+    if(list==NULL)
+        return;
+    median = list_size(list) / 2;
+    while(list)
+    {
+        list->index = i;
+        if(i <= median)
+            list->above_median=true;
+        else    
+            list->above_median=false;
+        list = list->next;
+        ++i;
+    }
+    
+}
+/**
+ * @brief
+ *
+ * @param
+ * @return
+ */
+
+void	prep_for_push(t_stack_node **list, t_stack_node *top_node, char stack_name)
+{
+    while(*list != top_node)
+    {
+        if(stack_name== 'a')
+        {
+            if (top_node->above_median)
+                ra(list);
+            else
+                rra(list);
+        }
+        else if(stack_name == 'b')
+        {
+            if(top_node->above_median)
+                rb(list);
+            else
+                rrb(list);
+        }  
+    }
+}
+/**
+ * @brief
+ *
+ * @param
+ * @return
+ */
+
+t_stack_node	*get_cheapest(t_stack_node *list) 
+{
+	if (!list)
+		return (NULL);
+	while (list)
+	{
+		if (list->cheapest)
+			return (list);
+		list = list->next;
+	}
+	return (NULL);
 }

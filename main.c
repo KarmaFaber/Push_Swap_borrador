@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:44 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 10:39:04 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:38:39 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	main(int argc, char **argv)
 	}
 	
 //ver listas testeo -----------------------------------------------------------------------------------
+/*
 	ft_printf("\033[0;35m\nlista a \033[0m\n");
 	print_list(a);
 	ft_printf("\033[0;35mfin de lista a \n\033[0m\n");
@@ -67,12 +68,12 @@ int	main(int argc, char **argv)
 	ft_printf("\033[0;34mlista b \033[0m\n");
 	print_list(b);
 	ft_printf("\033[0;34mfin de lista b \033[0m\n");
-	
+*/
 //ver listas fin testeo -----------------------------------------------------------------------------------
 
 	//--------------------------5-free------------------------
 	
 	free_stack_list(&a);
-	free_stack_list(&b);			//quitar?? y liberar b en otro lado?
+	//free_stack_list(&b);			//quitar?? y liberar b en otro lado?
 	return (0);
 }

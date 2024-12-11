@@ -6,11 +6,33 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 09:57:11 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/09 09:57:41 by mzolotar         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:36:39 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/**
+ * @brief
+ *
+ * @param
+ * @return
+ */
+
+static void initialize_node(t_stack_node *node, int number)
+{
+    if (node == NULL)
+        return;
+
+    node->value = number;         // Establece el valor del nodo
+    node->index = -1;             // Valor predeterminado para "index"
+    node->push_cost = 0;          // Inicializa el costo de movimiento
+    node->above_median = false;   // Supone que no está por encima de la mediana inicialmente
+    node->cheapest = false;       // Inicializa como no siendo el más barato
+    node->target_node = NULL;     // Ningún nodo objetivo por defecto
+    node->next = NULL;            // No hay siguiente nodo aún
+    node->prev = NULL;            // No hay nodo previo aún
+}
 
 /**
  * @brief
@@ -29,13 +51,9 @@ void add_node(t_stack_node **list, int number)
     node = malloc(sizeof(t_stack_node));
     if (node == NULL)
         return;
-    node->next =NULL;
-    node->value = number;
+    initialize_node(node, number);
     if (*list == NULL)
-    {
         *list = node;
-        node->prev =NULL;
-    }
     else
     {
         last_node = find_last_node(*list);
