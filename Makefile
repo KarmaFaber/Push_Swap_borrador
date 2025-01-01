@@ -106,4 +106,4 @@ cheker_linux: all
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Phony targets  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-.PHONY: all clean fclean re valgrind clean_valgrind clean_test format norm test cheker_linux
+.PHONY: all clean fclean re valgrind clean_valgrind clean_test format norm test cheker_linux 
