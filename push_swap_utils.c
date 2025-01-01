@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:09:48 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 21:20:19 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:19:08 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
  * @return
  */
 
-void	rotate_both(t_stack_node **a, t_stack_node **b,
-		t_stack_node *cheapest_node)
+void	rotate_both(t_stack_list **a, t_stack_list **b,
+		t_stack_list *cheapest_node)
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rr(a, b);
@@ -35,8 +35,8 @@ void	rotate_both(t_stack_node **a, t_stack_node **b,
  * @return
  */
 
-void	rev_rotate_both(t_stack_node **a, t_stack_node **b,
-		t_stack_node *cheapest_node)
+void	rev_rotate_both(t_stack_list **a, t_stack_list **b,
+		t_stack_list *cheapest_node)
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rrr(a, b);
@@ -51,9 +51,9 @@ void	rev_rotate_both(t_stack_node **a, t_stack_node **b,
  * @return
  */
 
-void	move_a_to_b(t_stack_node **a, t_stack_node **b)
+void	move_a_to_b(t_stack_list **a, t_stack_list **b)
 {
-	t_stack_node	*cheapest_node;
+	t_stack_list	*cheapest_node;
 
 	cheapest_node = get_cheapest(*a);
 	if ((cheapest_node->above_median)
@@ -74,7 +74,7 @@ void	move_a_to_b(t_stack_node **a, t_stack_node **b)
  * @return
  */
 
-void	move_b_to_a(t_stack_node **a, t_stack_node **b)
+void	move_b_to_a(t_stack_list **a, t_stack_list **b)
 {
 	prep_for_push(a, (*b)->target_node, 'a');
 	pa(a, b);
@@ -86,7 +86,7 @@ void	move_b_to_a(t_stack_node **a, t_stack_node **b)
  * @return
  */
 
-void	min_on_top(t_stack_node **a)
+void	min_on_top(t_stack_list **a)
 {
 	while ((*a)->value != find_smalles_value_list(*a)->value)
 	{
@@ -96,5 +96,3 @@ void	min_on_top(t_stack_node **a)
 			rra(a);
 	}
 }
-
-

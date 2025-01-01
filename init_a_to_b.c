@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:55:01 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 12:48:57 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:18:21 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
  * @return
  */
 
-static void	set_target_a(t_stack_node *a, t_stack_node *b)
+static void	set_target_a(t_stack_list *a, t_stack_list *b)
 {
-	t_stack_node	*current_b;
-	t_stack_node	*target_node;
+	t_stack_list	*current_b;
+	t_stack_list	*target_node;
 	long			best_match_index;
 
 	while (a)
@@ -54,7 +54,7 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
  * @return
  */
 
-static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
+static void	cost_analysis_a(t_stack_list *a, t_stack_list *b)
 {
 	int	size_a;
 	int	size_b;
@@ -81,10 +81,10 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
  * @return
  */
 
-void	set_cheapest(t_stack_node *list)
+void	set_cheapest(t_stack_list *list)
 {
 	long			cheapest_value;
-	t_stack_node	*cheapest_node;
+	t_stack_list	*cheapest_node;
 
 	if (list == NULL)
 		return ;
@@ -108,7 +108,7 @@ void	set_cheapest(t_stack_node *list)
  * @return
  */
 
-void	init_nodes_a_data(t_stack_node *a, t_stack_node *b)
+void	init_nodes_a_data(t_stack_list *a, t_stack_list *b)
 {
 	current_index(a);
 	current_index(b);

@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:20:06 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/10 11:06:32 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:19:57 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @return
  */
 
-static void	swap(t_stack_node **list)
+static void	swap(t_stack_list **list)
 {
 	int	size;
 
@@ -42,7 +42,7 @@ static void	swap(t_stack_node **list)
  * @return
  */
 
-void	sa(t_stack_node **a)
+void	sa(t_stack_list **a)
 {
 	swap(a);
 	write(1, "sa\n", 3);
@@ -54,7 +54,7 @@ void	sa(t_stack_node **a)
  * @return
  */
 
-void	sb(t_stack_node **b)
+void	sb(t_stack_list **b)
 {
 	swap(b);
 	write(1, "sb\n", 3);
@@ -67,7 +67,7 @@ void	sb(t_stack_node **b)
  * @return
  */
 
-void	ss(t_stack_node **a, t_stack_node **b)
+void	ss(t_stack_list **a, t_stack_list **b)
 {
 	swap(a);
 	swap(b);

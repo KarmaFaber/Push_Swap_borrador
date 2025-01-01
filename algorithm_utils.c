@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 08:13:01 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 20:46:00 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:17:46 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
  * @return
  */
 
-int	check_stack_is_ordened(t_stack_node **list)
+int	check_stack_is_ordened(t_stack_list **list)
 {
-	t_stack_node	*current;
+	t_stack_list	*current;
 
 	if (list == NULL || *list == NULL)
 	{
@@ -46,7 +46,7 @@ int	check_stack_is_ordened(t_stack_node **list)
  * @return
  */
 
-void	order_three(t_stack_node **list)
+void	order_three(t_stack_list **list)
 {
 	if (!list || !*list)
 		return ;
@@ -67,7 +67,7 @@ void	order_three(t_stack_node **list)
  * @return
  */
 
-void	current_index(t_stack_node *list)
+void	current_index(t_stack_list *list)
 {
 	int	i;
 	int	median;
@@ -94,7 +94,7 @@ void	current_index(t_stack_node *list)
  * @return
  */
 
-void	prep_for_push(t_stack_node **list, t_stack_node *top_node,
+void	prep_for_push(t_stack_list **list, t_stack_list *top_node,
 		char stack_name)
 {
 	while (*list != top_node)
@@ -122,7 +122,7 @@ void	prep_for_push(t_stack_node **list, t_stack_node *top_node,
  * @return
  */
 
-t_stack_node	*get_cheapest(t_stack_node *list)
+t_stack_list	*get_cheapest(t_stack_list *list)
 {
 	if (!list)
 		return (NULL);

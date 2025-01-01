@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:22:29 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 20:52:12 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:19:36 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
  * @return
  */
 
-static void	rotate(t_stack_node **list)
+static void	rotate(t_stack_list **list)
 {
-	t_stack_node	*last_node;
+	t_stack_list	*last_node;
 	int				size;
 
 	size = list_size(*list);
@@ -42,7 +42,7 @@ static void	rotate(t_stack_node **list)
  * @return
  */
 
-void	ra(t_stack_node **a)
+void	ra(t_stack_list **a)
 {
 	rotate(a);
 	write(1, "ra\n", 3);
@@ -55,7 +55,7 @@ void	ra(t_stack_node **a)
  * @return
  */
 
-void	rb(t_stack_node **b)
+void	rb(t_stack_list **b)
 {
 	rotate(b);
 	write(1, "rb\n", 3);
@@ -68,7 +68,7 @@ void	rb(t_stack_node **b)
  * @return
  */
 
-void	rr(t_stack_node **a, t_stack_node **b)
+void	rr(t_stack_list **a, t_stack_list **b)
 {
 	rotate(a);
 	rotate(b);

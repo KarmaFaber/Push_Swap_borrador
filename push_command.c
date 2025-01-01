@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:22:10 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/09 11:46:46 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:18:52 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
  * @return
  */
 
-static void	push(t_stack_node **dest, t_stack_node **src)
+static void	push(t_stack_list **dest, t_stack_list **src)
 {
-	t_stack_node	*node_to_push;
+	t_stack_list	*node_to_push;
 
 	if (!src || !*src)
 	{
@@ -54,7 +54,7 @@ static void	push(t_stack_node **dest, t_stack_node **src)
  * @return
  */
 
-void	pa(t_stack_node **a, t_stack_node **b)
+void	pa(t_stack_list **a, t_stack_list **b)
 {
 	push(a, b);
 	write(1, "pa\n", 3);
@@ -67,7 +67,7 @@ void	pa(t_stack_node **a, t_stack_node **b)
  * @return
  */
 
-void	pb(t_stack_node **b, t_stack_node **a)
+void	pb(t_stack_list **b, t_stack_list **a)
 {
 	push(b, a);
 	write(1, "pb\n", 3);

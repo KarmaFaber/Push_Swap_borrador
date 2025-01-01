@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 09:57:11 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 21:22:04 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:18:41 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @return
  */
 
-static void	initialize_node(t_stack_node *node, int number)
+static void	initialize_node(t_stack_list *node, int number)
 {
 	if (node == NULL)
 		return ;
@@ -40,14 +40,14 @@ static void	initialize_node(t_stack_node *node, int number)
  * @return
  */
 
-void	add_node(t_stack_node **list, int number)
+void	add_node(t_stack_list **list, int number)
 {
-	t_stack_node	*node;
-	t_stack_node	*last_node;
+	t_stack_list	*node;
+	t_stack_list	*last_node;
 
 	if (list == NULL)
 		return ;
-	node = malloc(sizeof(t_stack_node));
+	node = malloc(sizeof(t_stack_list));
 	if (node == NULL)
 		return ;
 	initialize_node(node, number);
@@ -72,25 +72,21 @@ void	add_node(t_stack_node **list, int number)
  *
  */
 
-void	check_and_init_list(t_stack_node **a, char **argv, bool argc_flag_2)
+void	check_and_init_list(t_stack_list **a, char **argv, bool argc_flag_2)
 {
-	long number;
-	int i;
+	long	number;
+	int		i;
 
 	i = 0;
 	while (argv[i])
 	{
 		if (error_syntax_argv(argv[i]))
 			error_exit(a, argv, argc_flag_2);
-
 		number = ft_atol(argv[i]);
-
 		if (number > INT_MAX || number < INT_MIN)
 			error_exit(a, argv, argc_flag_2);
-
 		if (error_repetition_int(*a, (int)number))
 			error_exit(a, argv, argc_flag_2);
-
 		add_node(a, (int)number);
 		++i;
 	}

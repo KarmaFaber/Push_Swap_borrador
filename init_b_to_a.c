@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:33:02 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 20:48:02 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:18:30 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
  * @param
  * @return
  */
-static void	set_target_b(t_stack_node *a, t_stack_node *b)
+static void	set_target_b(t_stack_list *a, t_stack_list *b)
 {
-	t_stack_node	*current_a;
-	t_stack_node	*target_node;
+	t_stack_list	*current_a;
+	t_stack_list	*target_node;
 	long			best_match_index;
 
 	while (b)
@@ -53,7 +53,7 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
  * @return
  */
 
-void	init_nodes_b_data(t_stack_node *a, t_stack_node *b)
+void	init_nodes_b_data(t_stack_list *a, t_stack_list *b)
 {
 	current_index(a);
 	current_index(b);

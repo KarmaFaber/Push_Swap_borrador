@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 10:30:39 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 20:55:34 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:19:50 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @return
  */
 
-t_stack_node	*find_last_node(t_stack_node *list)
+t_stack_list	*find_last_node(t_stack_list *list)
 {
 	if (list == NULL)
 		return (NULL);
@@ -35,10 +35,10 @@ t_stack_node	*find_last_node(t_stack_node *list)
  * @return
  */
 
-t_stack_node	*find_smalles_value_list(t_stack_node *list)
+t_stack_list	*find_smalles_value_list(t_stack_list *list)
 {
 	long			smallest;
-	t_stack_node	*smallest_node;
+	t_stack_list	*smallest_node;
 
 	if (list == NULL)
 		return (NULL);
@@ -62,10 +62,10 @@ t_stack_node	*find_smalles_value_list(t_stack_node *list)
  * @return
  */
 
-t_stack_node	*find_biggest_value_list(t_stack_node *list)
+t_stack_list	*find_biggest_value_list(t_stack_list *list)
 {
 	long			biggest;
-	t_stack_node	*biggest_node;
+	t_stack_list	*biggest_node;
 
 	if (list == NULL)
 		return (NULL);
@@ -89,7 +89,7 @@ t_stack_node	*find_biggest_value_list(t_stack_node *list)
  * @return
  */
 
-int	list_size(t_stack_node *list)
+int	list_size(t_stack_list *list)
 {
 	int	count;
 

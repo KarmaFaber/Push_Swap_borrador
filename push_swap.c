@@ -6,15 +6,16 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:44 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 21:19:33 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:19:17 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_list(t_stack_node *head)
+// quitar esta f, solo es para testeo
+void	print_list(t_stack_list *head)
 {
-	t_stack_node	*position;
+	t_stack_list	*position;
 
 	position = head;
 	while (position != NULL)
@@ -22,7 +23,7 @@ void	print_list(t_stack_node *head)
 		printf("%i -> ", position->value);
 		position = position->next;
 	}
-	printf("NULL\n"); 
+	printf("NULL\n");
 }
 
 /**
@@ -32,7 +33,7 @@ void	print_list(t_stack_node *head)
  * @return
  */
 
-void	push_swap(t_stack_node **a, t_stack_node **b)
+void	push_swap(t_stack_list **a, t_stack_list **b)
 {
 	int	a_size;
 
@@ -58,11 +59,10 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 	min_on_top(a);
 }
 
-
 int	main(int argc, char **argv)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_stack_list	*a;
+	t_stack_list	*b;
 
 	a = NULL;
 	b = NULL;

@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 09:14:24 by mzolotar          #+#    #+#             */
-/*   Updated: 2024/12/11 20:46:38 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/01 12:18:01 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @return
  */
 
-void	error_exit(t_stack_node **list, char **argv, bool argc_flag_2)
+void	error_exit(t_stack_list **list, char **argv, bool argc_flag_2)
 {
 	free_stack_list(list);
 	if (argc_flag_2)
@@ -80,7 +80,7 @@ int	error_syntax_argv(char *argv_nbr)
  * @return
  */
 
-int	error_repetition_int(t_stack_node *list, int number)
+int	error_repetition_int(t_stack_list *list, int number)
 {
 	if (list == NULL)
 		return (0);
@@ -100,10 +100,10 @@ int	error_repetition_int(t_stack_node *list, int number)
  * @return
  */
 
-void	free_stack_list(t_stack_node **list)
+void	free_stack_list(t_stack_list **list)
 {
-	t_stack_node	*temp;
-	t_stack_node	*current;
+	t_stack_list	*temp;
+	t_stack_list	*current;
 
 	if (list == NULL)
 		return ;
