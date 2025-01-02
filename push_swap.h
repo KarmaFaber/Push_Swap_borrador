@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:40 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:20:50 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/02 10:48:57 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@
 
 typedef struct s_stack_list
 {
-	int value;                        // list -ok
-	int index;                        // list -ok
-	int push_cost;                    // list -ok
-	bool above_median;                // list -ok
-	bool cheapest;                    // list -ok
-	struct s_stack_list *target_node; // list -ok
-	struct s_stack_list *next;        // list - ok
-	struct s_stack_list *prev;        // list - ok
-}				t_stack_list;
+	int value; 
+	int index;     
+	int push_cost;      
+	bool above_median;   
+	bool cheapest;    
+	struct s_stack_list *target_node;
+	struct s_stack_list *next; 
+	struct s_stack_list *prev;    
+}	t_stack_list;
 
 /*#◉───▣───▢◇▢───▣───◉•◉───▣───▢Main:▢───▣───◉•◉───▣───▢◇▢───▣───◉#*/
 // push_swap.c (2/5)
@@ -74,7 +74,7 @@ void			move_a_to_b(t_stack_list **a, t_stack_list **b);
 void			min_on_top(t_stack_list **a);
 
 // algorithm_utils.c (5/5)
-int	check_stack_is_ordened(t_stack_list **list); //(0 false, 1 frue)
+bool	check_stack_is_ordened(t_stack_list *list); //(0 false, 1 frue)
 void			order_three(t_stack_list **list);
 void			current_index(t_stack_list *list);
 void			prep_for_push(t_stack_list **list, t_stack_list *top_node,

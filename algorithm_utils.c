@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 08:13:01 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:17:46 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/02 10:51:56 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@
  *
  * @param
  * @return
+ * 1 - true (ordened)
+ * 0 - false (not ordened)
  */
 
-int	check_stack_is_ordened(t_stack_list **list)
+bool	check_stack_is_ordened(t_stack_list *list)
 {
 	t_stack_list	*current;
 
-	if (list == NULL || *list == NULL)
-	{
+	if (list == NULL)
 		return (1);
-	}
-	current = *list;
+	current = list;
 	while (current->next != NULL)
 	{
 		if (current->value > current->next->value)
@@ -50,7 +50,7 @@ void	order_three(t_stack_list **list)
 {
 	if (!list || !*list)
 		return ;
-	if ((list_size(*list) != 3) || (check_stack_is_ordened(list)))
+	if ((list_size(*list) != 3) || (check_stack_is_ordened(*list)))
 		return ;
 	if (find_biggest_value_list(*list) == *list)
 		ra(list);

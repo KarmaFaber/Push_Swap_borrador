@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:44 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:19:17 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/02 10:50:21 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ void	push_swap(t_stack_list **a, t_stack_list **b)
 	a_size = list_size(*a);
 	if (a == NULL || *a == NULL || b == NULL)
 		return ;
-	if ((!check_stack_is_ordened(a)) && (a_size-- > 3))
+	if ((!check_stack_is_ordened(*a)) && (a_size-- > 3))
 		pb(b, a);
-	if ((!check_stack_is_ordened(a)) && (a_size-- > 3))
+	if ((!check_stack_is_ordened(*a)) && (a_size-- > 3))
 		pb(b, a);
-	while ((!check_stack_is_ordened(a)) && (a_size-- > 3))
+	while ((!check_stack_is_ordened(*a)) && (a_size-- > 3))
 	{
 		init_nodes_a_data(*a, *b);
 		move_a_to_b(a, b);
@@ -68,7 +68,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	//--------------------------1 - check argv-------------------------
 	if ((argc == 1) || (argc == 2 && !argv[1][0]))
-		return (1);
+		exit(EXIT_SUCCESS);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	//--------------------------2- init list and chaeck argv format-> error------------------------
@@ -76,8 +76,10 @@ int	main(int argc, char **argv)
 		check_and_init_list(&a, argv, true);
 	else
 		check_and_init_list(&a, argv + 1, false);
+
+		
 	//--------------------------4- algorithm------------------------
-	if (!check_stack_is_ordened(&a))
+	if (!check_stack_is_ordened(a))
 	{
 		if (list_size(a) == 2)
 			sa(&a);
