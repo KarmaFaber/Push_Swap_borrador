@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 /**
- * @brief Moves the top node from src stack to dest stack. 
+ * @brief Moves the top node from src stack to dest stack.
  * 🚨 If stack empty (i.e. NULL)
  * @param dest Pointer to the destination stack list.
  * @param src Pointer to the source stack list.

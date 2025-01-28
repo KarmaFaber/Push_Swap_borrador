@@ -19,22 +19,22 @@
  * @return Void.
  */
 
-static void swap(t_stack_list **list)
+static void	swap(t_stack_list **list)
 {
-    t_stack_list *first;
-	t_stack_list *second;
+	t_stack_list	*first;
+	t_stack_list	*second;
 
-    if (*list == NULL || (*list)->next == NULL)
-        return;
-    first = *list;
-    second = first->next;
-    first->next = second->next;
-    if (second->next) 
-        second->next->prev = first;
-    second->prev = NULL;
-    second->next = first;
-    first->prev = second;
-    *list = second;
+	if (*list == NULL || (*list)->next == NULL)
+		return ;
+	first = *list;
+	second = first->next;
+	first->next = second->next;
+	if (second->next)
+		second->next->prev = first;
+	second->prev = NULL;
+	second->next = first;
+	first->prev = second;
+	*list = second;
 }
 
 /**

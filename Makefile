@@ -83,11 +83,6 @@ norm:
 	@norminette libft $(PUSH_SWAP_SRCS) push_swap.h
 	@echo "$(CURRENT_COLOR)➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌── Norminette completed. Check your output for details. ─╌➣⋆➣╌─⤏➵•➵⤐─╌╌➣⋆➣╌╌─$(RESET)"
 
-#◉───▣───▢◇▢───▣───◉•◉───▣───▢   Format   ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
-
-format: 
-	c_formatter_42 $(PUSH_SWAP_SRCS) push_swap.h
-
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢      Test      ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
 test: all
@@ -107,4 +102,4 @@ cheker_linux: all
 
 #◉───▣───▢◇▢───▣───◉•◉───▣───▢ Phony targets  ▢───▣───◉•◉───▣───▢◇▢───▣───◉#
 
-.PHONY: all clean fclean re valgrind clean_valgrind clean_test format norm test cheker_linux 
+.PHONY: all clean fclean re valgrind clean_valgrind clean_test norm test cheker_linux 

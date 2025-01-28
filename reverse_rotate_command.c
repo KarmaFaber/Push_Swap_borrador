@@ -36,7 +36,8 @@ static void	reverse_rotate(t_stack_list **list)
 }
 
 /**
- * @brief Reverse rotates stack 'a', moving its last node to the front, prints "rra".
+ * @brief Reverse rotates stack 'a', moving its last node to the front,
+	prints "rra".
  *
  * @param a Pointer to stack 'a' to apply the reverse rotation.
  * @return Void.
@@ -49,7 +50,8 @@ void	rra(t_stack_list **a)
 }
 
 /**
- * @brief Reverse rotates stack 'b', moving its last node to the front, prints "rrb".
+ * @brief Reverse rotates stack 'b', moving its last node to the front,
+	prints "rrb".
  *
  * @param b Pointer to stack 'b' to apply the reverse rotation.
  * @return Void.

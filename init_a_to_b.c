@@ -14,7 +14,7 @@
 
 /**
  * @brief Sets the target node for each element in list a based on list b.
- * 
+ *
  * @param a The stack list a to set target nodes for.
  * @param b The stack list b used to find target nodes.
  * @return None
@@ -50,7 +50,7 @@ static void	set_target_a(t_stack_list *a, t_stack_list *b)
 
 /**
  * @brief Analyzes the push cost for each node in list a based on list b.
- * 
+ *
  * @param a The stack list a to analyze push costs for.
  * @param b The stack list b used in the cost analysis.
  * @return None
@@ -78,7 +78,7 @@ static void	cost_analysis_a(t_stack_list *a, t_stack_list *b)
 
 /**
  * @brief Identifies and sets the cheapest node in a stack based on push cost.
- * 
+ *
  * @param list The stack list to identify the cheapest node in.
  * @return None
  */
@@ -105,7 +105,7 @@ void	set_cheapest(t_stack_list *list)
 
 /**
  * @brief Initializes data for nodes in list a and list b, including target.
- * 
+ *
  * @param a The stack list a to initialize.
  * @param b The stack list b to initialize.
  * @return None
