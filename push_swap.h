@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 09:34:40 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/02 10:48:57 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 13:54:04 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 //#➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌──includes:──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔#
 
 # include "libft/libft.h"
-# include <limits.h>  //limits
-# include <stdbool.h> //bollean
-# include <stddef.h>  // size_t
-# include <stdio.h>   //printf
-# include <stdlib.h>  //exit
+# include <limits.h>
+# include <stdbool.h>
+# include <stddef.h>
+# include <stdlib.h>
 
 //#➵⤐──╌╌➣⋆➣╌╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌───struct:──╌╌➣⋆➣╌─╌──⤏➵•➵⤐──╌╌➣⋆➣╌╌➔#
 
@@ -76,20 +75,20 @@ void			min_on_top(t_stack_list **a);
 // algorithm_utils.c (5/5)
 bool	check_stack_is_ordened(t_stack_list *list); //(0 false, 1 frue)
 void			order_three(t_stack_list **list);
-void			current_index(t_stack_list *list);
+void			current_index_and_median(t_stack_list *list);
 void			prep_for_push(t_stack_list **list, t_stack_list *top_node,
 					char stack_name);
-t_stack_list	*get_cheapest(t_stack_list *list);
+t_stack_list	*get_cheapest_node(t_stack_list *list);
 
 // init_a_to_b.c (4/5)
 // static void set_target_a(t_stack_list *a, t_stack_list *b);
 // static void	cost_analysis_a(t_stack_list *a, t_stack_list *b);
 void			set_cheapest(t_stack_list *list);
-void			init_nodes_a_data(t_stack_list *a, t_stack_list *b);
+void	init_a_nodes_data(t_stack_list *a, t_stack_list *b);
 
 // init_b_to_a.c (2/5)
 // static void	set_target_b(t_stack_list *a, t_stack_list *b);
-void			init_nodes_b_data(t_stack_list *a, t_stack_list *b);
+void	init_b_nodes_data(t_stack_list *a, t_stack_list *b);
 
 /*#◉───▣───▢◇▢───▣───◉•◉───▣───▢Commands:▢───▣───◉•◉───▣───▢◇▢───▣───◉#*/
 // swap_command.c (4/5)

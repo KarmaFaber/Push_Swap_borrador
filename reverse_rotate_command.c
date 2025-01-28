@@ -6,17 +6,17 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:22:56 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:19:27 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 10:47:03 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief
+ * @brief Reverses a stack by moving the last node to the front of the stack.
  *
- * @param
- * @return
+ * @param list Pointer to the stack list to perform the reverse rotation.
+ * @return Void.
  */
 
 static void	reverse_rotate(t_stack_list **list)
@@ -36,10 +36,10 @@ static void	reverse_rotate(t_stack_list **list)
 }
 
 /**
- * @brief
+ * @brief Reverse rotates stack 'a', moving its last node to the front, prints "rra".
  *
- * @param
- * @return
+ * @param a Pointer to stack 'a' to apply the reverse rotation.
+ * @return Void.
  */
 
 void	rra(t_stack_list **a)
@@ -49,10 +49,10 @@ void	rra(t_stack_list **a)
 }
 
 /**
- * @brief
+ * @brief Reverse rotates stack 'b', moving its last node to the front, prints "rrb".
  *
- * @param
- * @return
+ * @param b Pointer to stack 'b' to apply the reverse rotation.
+ * @return Void.
  */
 
 void	rrb(t_stack_list **b)
@@ -61,10 +61,11 @@ void	rrb(t_stack_list **b)
 	write(1, "rrb\n", 4);
 }
 /**
- * @brief
+ * @brief Reverse rotates both stacks 'a' and 'b', prints "rrr".
  *
- * @param
- * @return
+ * @param a Pointer to stack 'a' to apply the reverse rotation.
+ * @param b Pointer to stack 'b' to apply the reverse rotation.
+ * @return Void.
  */
 
 void	rrr(t_stack_list **a, t_stack_list **b)

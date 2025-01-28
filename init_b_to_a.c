@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:33:02 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:18:30 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 13:53:27 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ static void	set_target_b(t_stack_list *a, t_stack_list *b)
  * @return
  */
 
-void	init_nodes_b_data(t_stack_list *a, t_stack_list *b)
+void	init_b_nodes_data(t_stack_list *a, t_stack_list *b)
 {
-	current_index(a);
-	current_index(b);
+	current_index_and_median(a);
+	current_index_and_median(b);
 	set_target_b(a, b);
 }

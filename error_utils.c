@@ -6,17 +6,19 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 09:14:24 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:18:01 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 10:56:25 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief
+ * @brief Frees stack list and argv (if needed), prints error, and exits.
  *
- * @param
- * @return
+ * @param list Pointer to the stack list to be freed.
+ * @param argv Array of strings to free if argc_flag_2 is true.
+ * @param argc_flag_2 Flag indicating if argv should be freed.
+ * @return Void.
  */
 
 void	error_exit(t_stack_list **list, char **argv, bool argc_flag_2)
@@ -29,10 +31,10 @@ void	error_exit(t_stack_list **list, char **argv, bool argc_flag_2)
 }
 
 /**
- * @brief
+ * @brief Frees a split argv array and its elements.
  *
- * @param
- * @return
+ * @param argv Pointer to the array of strings to be freed.
+ * @return Void.
  */
 
 void	free_split_argv(char **argv)
@@ -51,10 +53,10 @@ void	free_split_argv(char **argv)
 }
 
 /**
- * @brief
+ * @brief Checks for syntax errors in a numeric string.
  *
- * @param
- * @return
+ * @param argv_nbr String to validate as a numeric input.
+ * @return 1 if there is a syntax error, 0 otherwise.
  */
 
 int	error_syntax_argv(char *argv_nbr)
@@ -74,10 +76,11 @@ int	error_syntax_argv(char *argv_nbr)
 }
 
 /**
- * @brief
+ * @brief Checks if a number already exists in the stack list.
  *
- * @param
- * @return
+ * @param list Pointer to the stack list to search.
+ * @param number Integer value to check for duplicates.
+ * @return 1 if the number is found, 0 otherwise.
  */
 
 int	error_repetition_int(t_stack_list *list, int number)
@@ -94,10 +97,10 @@ int	error_repetition_int(t_stack_list *list, int number)
 }
 
 /**
- * @brief
+ * @brief Frees all nodes in a stack list and sets the pointer to NULL.
  *
- * @param
- * @return
+ * @param list Pointer to the stack list to be freed.
+ * @return Void.
  */
 
 void	free_stack_list(t_stack_list **list)

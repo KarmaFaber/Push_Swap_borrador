@@ -6,17 +6,18 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 09:57:11 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:18:41 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 10:41:36 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief
+ * @brief Initializes a stack node with default values and a given number.
  *
- * @param
- * @return
+ * @param node Pointer to the node to be initialized.
+ * @param number Integer value to assign to the node.
+ * @return Void.
  */
 
 static void	initialize_node(t_stack_list *node, int number)
@@ -34,10 +35,11 @@ static void	initialize_node(t_stack_list *node, int number)
 }
 
 /**
- * @brief
+ * @brief Adds a new node with a given number to the end of a stack list.
  *
- * @param
- * @return
+ * @param list Pointer to the stack list where the node will be added.
+ * @param number Integer value to assign to the new node.
+ * @return Void.
  */
 
 void	add_node(t_stack_list **list, int number)
@@ -62,14 +64,12 @@ void	add_node(t_stack_list **list, int number)
 }
 
 /**
- * @brief
+ * @brief Validates and initializes a stack list from a given argv array.
  *
- * @param
- * @return
- *
- * 🏁 Flag is useful cause if true, i have the argv in the HEAP to free
- * ya que lista ya fue creada y no necesitamos esos datos
- *
+ * @param a Pointer to the stack list to initialize.
+ * @param argv Array of strings containing the input values.
+ * @param argc_flag_2 Flag 🏁 to indicate if argv needs to be freed.
+ * @return Void.
  */
 
 void	check_and_init_list(t_stack_list **a, char **argv, bool argc_flag_2)

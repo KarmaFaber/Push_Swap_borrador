@@ -6,17 +6,17 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 10:30:39 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:19:50 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 10:49:55 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief
+ * @brief Finds the last node in a stack list.
  *
- * @param
- * @return
+ * @param list Pointer to the stack list to search.
+ * @return Pointer to the last node, or NULL if the list is empty.
  */
 
 t_stack_list	*find_last_node(t_stack_list *list)
@@ -29,10 +29,10 @@ t_stack_list	*find_last_node(t_stack_list *list)
 }
 
 /**
- * @brief
+ * @brief Finds the node with the smallest value in a stack list.
  *
- * @param
- * @return
+ * @param list Pointer to the stack list to search.
+ * @return Pointer to the smallest node, or NULL if the list is empty.
  */
 
 t_stack_list	*find_smalles_value_list(t_stack_list *list)
@@ -56,10 +56,10 @@ t_stack_list	*find_smalles_value_list(t_stack_list *list)
 }
 
 /**
- * @brief
+ * @brief Finds the node with the largest value in a stack list.
  *
- * @param
- * @return
+ * @param list Pointer to the stack list to search.
+ * @return Pointer to the largest node, or NULL if the list is empty.
  */
 
 t_stack_list	*find_biggest_value_list(t_stack_list *list)
@@ -83,10 +83,10 @@ t_stack_list	*find_biggest_value_list(t_stack_list *list)
 }
 
 /**
- * @brief
+ * @brief Counts the number of nodes in a stack list.
  *
- * @param
- * @return
+ * @param list Pointer to the stack list to count nodes.
+ * @return The total number of nodes in the list.
  */
 
 int	list_size(t_stack_list *list)

@@ -6,19 +6,18 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:22:10 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:18:52 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 10:48:39 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief
- *
- *
- * 🚨 attention If stack empty (i.e. NULL)
- * @param
- * @return
+ * @brief Moves the top node from src stack to dest stack. 
+ * 🚨 If stack empty (i.e. NULL)
+ * @param dest Pointer to the destination stack list.
+ * @param src Pointer to the source stack list.
+ * @return Void.
  */
 
 static void	push(t_stack_list **dest, t_stack_list **src)
@@ -48,10 +47,11 @@ static void	push(t_stack_list **dest, t_stack_list **src)
 }
 
 /**
- * @brief
+ * @brief Pushes the top node of stack 'b' to stack 'a' and prints "pa".
  *
- * @param
- * @return
+ * @param a Pointer to stack 'a' to receive the node.
+ * @param b Pointer to stack 'b' to provide the node.
+ * @return Void.
  */
 
 void	pa(t_stack_list **a, t_stack_list **b)
@@ -61,10 +61,11 @@ void	pa(t_stack_list **a, t_stack_list **b)
 }
 
 /**
- * @brief
+ * @brief Pushes the top node of stack 'a' to stack 'b' and prints "pb".
  *
- * @param
- * @return
+ * @param b Pointer to stack 'b' to receive the node.
+ * @param a Pointer to stack 'a' to provide the node.
+ * @return Void.
  */
 
 void	pb(t_stack_list **b, t_stack_list **a)

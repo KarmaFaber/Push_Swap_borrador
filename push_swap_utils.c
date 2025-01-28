@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:09:48 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:19:08 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 13:34:00 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	rotate_both(t_stack_list **a, t_stack_list **b,
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rr(a, b);
-	current_index(*a);
-	current_index(*b);
+	current_index_and_median(*a);
+	current_index_and_median(*b);
 }
 
 /**
@@ -40,8 +40,8 @@ void	rev_rotate_both(t_stack_list **a, t_stack_list **b,
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rrr(a, b);
-	current_index(*a);
-	current_index(*b);
+	current_index_and_median(*a);
+	current_index_and_median(*b);
 }
 
 /**
@@ -55,7 +55,7 @@ void	move_a_to_b(t_stack_list **a, t_stack_list **b)
 {
 	t_stack_list	*cheapest_node;
 
-	cheapest_node = get_cheapest(*a);
+	cheapest_node = get_cheapest_node(*a);
 	if ((cheapest_node->above_median)
 		&& (cheapest_node->target_node->above_median))
 		rotate_both(a, b, cheapest_node);

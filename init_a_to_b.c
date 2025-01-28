@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:55:01 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:18:21 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 13:52:41 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,10 @@ void	set_cheapest(t_stack_list *list)
  * @return
  */
 
-void	init_nodes_a_data(t_stack_list *a, t_stack_list *b)
+void	init_a_nodes_data(t_stack_list *a, t_stack_list *b)
 {
-	current_index(a);
-	current_index(b);
+	current_index_and_median(a);
+	current_index_and_median(b);
 	set_target_a(a, b);
 	cost_analysis_a(a, b);
 	set_cheapest(a);

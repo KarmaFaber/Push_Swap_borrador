@@ -6,40 +6,42 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 20:20:06 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/01 12:19:57 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 12:42:07 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief
+ * @brief Swaps the first two nodes in a stack if the stack has at least two.
  *
- * @param
- * @return
+ * @param list Pointer to the stack list to perform the swap.
+ * @return Void.
  */
 
-static void	swap(t_stack_list **list)
+static void swap(t_stack_list **list)
 {
-	int	size;
+    t_stack_list *first;
+	t_stack_list *second;
 
-	size = list_size(*list);
-	if (*list == NULL || list == NULL || size == 1)
-		return ;
-	*list = (*list)->next;
-	(*list)->prev->prev = *list;
-	(*list)->prev->next = (*list)->next;
-	if ((*list)->next)
-		(*list)->next->prev = (*list)->prev;
-	(*list)->next = (*list)->prev;
-	(*list)->prev = NULL;
+    if (*list == NULL || (*list)->next == NULL)
+        return;
+    first = *list;
+    second = first->next;
+    first->next = second->next;
+    if (second->next) 
+        second->next->prev = first;
+    second->prev = NULL;
+    second->next = first;
+    first->prev = second;
+    *list = second;
 }
 
 /**
- * @brief
+ * @brief Performs the swap operation on stack 'a' and prints "sa".
  *
- * @param
- * @return
+ * @param a Pointer to stack 'a' to apply the swap.
+ * @return Void.
  */
 
 void	sa(t_stack_list **a)
@@ -47,11 +49,12 @@ void	sa(t_stack_list **a)
 	swap(a);
 	write(1, "sa\n", 3);
 }
+
 /**
- * @brief
+ * @brief Performs the swap operation on stack 'b' and prints "sb".
  *
- * @param
- * @return
+ * @param b Pointer to stack 'b' to apply the swap.
+ * @return Void.
  */
 
 void	sb(t_stack_list **b)
@@ -61,10 +64,11 @@ void	sb(t_stack_list **b)
 }
 
 /**
- * @brief
+ * @brief Performs the swap operation on both stacks 'a' and 'b', prints "ss".
  *
- * @param
- * @return
+ * @param a Pointer to stack 'a' to apply the swap.
+ * @param b Pointer to stack 'b' to apply the swap.
+ * @return Void.
  */
 
 void	ss(t_stack_list **a, t_stack_list **b)

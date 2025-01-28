@@ -6,7 +6,7 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 08:13:01 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/02 10:51:56 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 13:32:51 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	order_three(t_stack_list **list)
  * @return
  */
 
-void	current_index(t_stack_list *list)
+void	current_index_and_median(t_stack_list *list)
 {
 	int	i;
 	int	median;
@@ -122,7 +122,7 @@ void	prep_for_push(t_stack_list **list, t_stack_list *top_node,
  * @return
  */
 
-t_stack_list	*get_cheapest(t_stack_list *list)
+t_stack_list	*get_cheapest_node(t_stack_list *list)
 {
 	if (!list)
 		return (NULL);
