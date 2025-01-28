@@ -6,18 +6,20 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:33:02 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/28 13:53:27 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:37:31 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief
+ * @brief Sets the target node for each element in list b based on list a.
  *
- * @param
- * @return
+ * @param a The stack list a used to find target nodes for list b.
+ * @param b The stack list b to set target nodes for.
+ * @return None
  */
+
 static void	set_target_b(t_stack_list *a, t_stack_list *b)
 {
 	t_stack_list	*current_a;
@@ -47,10 +49,11 @@ static void	set_target_b(t_stack_list *a, t_stack_list *b)
 }
 
 /**
- * @brief
+ * @brief Initializes data for nodes in list b and sets target nodes.
  *
- * @param
- * @return
+ * @param a The stack list a used to find target nodes for list b.
+ * @param b The stack list b to initialize.
+ * @return None
  */
 
 void	init_b_nodes_data(t_stack_list *a, t_stack_list *b)

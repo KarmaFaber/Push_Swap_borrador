@@ -6,17 +6,19 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:09:48 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/28 13:34:00 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:39:58 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief
+ * @brief Rotates both stacks until the cheapest node is at the top.
  *
- * @param
- * @return
+ * @param a The first stack.
+ * @param b The second stack.
+ * @param cheapest_node The node with the lowest push cost.
+ * @return None
  */
 
 void	rotate_both(t_stack_list **a, t_stack_list **b,
@@ -29,10 +31,12 @@ void	rotate_both(t_stack_list **a, t_stack_list **b,
 }
 
 /**
- * @brief
+ * @brief Reverse rotates both stacks until the cheapest node is at top.
  *
- * @param
- * @return
+ * @param a The first stack.
+ * @param b The second stack.
+ * @param cheapest_node The node with the lowest push cost.
+ * @return None
  */
 
 void	rev_rotate_both(t_stack_list **a, t_stack_list **b,
@@ -45,10 +49,11 @@ void	rev_rotate_both(t_stack_list **a, t_stack_list **b,
 }
 
 /**
- * @brief
+ * @brief Moves the cheapest node from stack 'a' to stack 'b'.
  *
- * @param
- * @return
+ * @param a The source stack.
+ * @param b The destination stack.
+ * @return None
  */
 
 void	move_a_to_b(t_stack_list **a, t_stack_list **b)
@@ -68,10 +73,11 @@ void	move_a_to_b(t_stack_list **a, t_stack_list **b)
 }
 
 /**
- * @brief
+ * @brief Moves the cheapest node from stack 'a' to stack 'b'.
  *
- * @param
- * @return
+ * @param a The source stack.
+ * @param b The destination stack.
+ * @return None
  */
 
 void	move_b_to_a(t_stack_list **a, t_stack_list **b)
@@ -80,10 +86,10 @@ void	move_b_to_a(t_stack_list **a, t_stack_list **b)
 	pa(a, b);
 }
 /**
- * @brief
+ * @brief Moves the smallest node to the top of stack 'a'.
  *
- * @param
- * @return
+ * @param a The stack to reorder.
+ * @return None
  */
 
 void	min_on_top(t_stack_list **a)

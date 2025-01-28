@@ -6,17 +6,18 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:55:01 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/28 13:52:41 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:36:37 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief
- *
- * @param
- * @return
+ * @brief Sets the target node for each element in list a based on list b.
+ * 
+ * @param a The stack list a to set target nodes for.
+ * @param b The stack list b used to find target nodes.
+ * @return None
  */
 
 static void	set_target_a(t_stack_list *a, t_stack_list *b)
@@ -48,10 +49,11 @@ static void	set_target_a(t_stack_list *a, t_stack_list *b)
 }
 
 /**
- * @brief
- *
- * @param
- * @return
+ * @brief Analyzes the push cost for each node in list a based on list b.
+ * 
+ * @param a The stack list a to analyze push costs for.
+ * @param b The stack list b used in the cost analysis.
+ * @return None
  */
 
 static void	cost_analysis_a(t_stack_list *a, t_stack_list *b)
@@ -75,10 +77,10 @@ static void	cost_analysis_a(t_stack_list *a, t_stack_list *b)
 }
 
 /**
- * @brief
- *
- * @param
- * @return
+ * @brief Identifies and sets the cheapest node in a stack based on push cost.
+ * 
+ * @param list The stack list to identify the cheapest node in.
+ * @return None
  */
 
 void	set_cheapest(t_stack_list *list)
@@ -102,10 +104,11 @@ void	set_cheapest(t_stack_list *list)
 }
 
 /**
- * @brief
- *
- * @param
- * @return
+ * @brief Initializes data for nodes in list a and list b, including target.
+ * 
+ * @param a The stack list a to initialize.
+ * @param b The stack list b to initialize.
+ * @return None
  */
 
 void	init_a_nodes_data(t_stack_list *a, t_stack_list *b)

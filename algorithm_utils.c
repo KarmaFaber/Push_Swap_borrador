@@ -6,19 +6,17 @@
 /*   By: mzolotar <mzolotar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 08:13:01 by mzolotar          #+#    #+#             */
-/*   Updated: 2025/01/28 13:32:51 by mzolotar         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:38:47 by mzolotar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * @brief
+ * @brief Checks if a stack is ordered (ascending order).
  *
- * @param
- * @return
- * 1 - true (ordened)
- * 0 - false (not ordened)
+ * @param list The stack to be checked.
+ * @return 1 if ordered, 0 if not ordered.
  */
 
 bool	check_stack_is_ordened(t_stack_list *list)
@@ -40,10 +38,10 @@ bool	check_stack_is_ordened(t_stack_list *list)
 }
 
 /**
- * @brief
+ * @brief Orders a stack of size 3, if not already ordered.
  *
- * @param
- * @return
+ * @param list The stack to be ordered.
+ * @return None
  */
 
 void	order_three(t_stack_list **list)
@@ -61,10 +59,10 @@ void	order_three(t_stack_list **list)
 }
 
 /**
- * @brief
+ * @brief Assigns index and median values to the nodes of a list.
  *
- * @param
- * @return
+ * @param list The list to index and assign median status.
+ * @return None
  */
 
 void	current_index_and_median(t_stack_list *list)
@@ -88,10 +86,12 @@ void	current_index_and_median(t_stack_list *list)
 	}
 }
 /**
- * @brief
+ * @brief Prepares the list for a push by rotating it towards the top node.
  *
- * @param
- * @return
+ * @param list The list to rotate.
+ * @param top_node The target node to bring to the top.
+ * @param stack_name The name of the stack ('a' or 'b').
+ * @return None
  */
 
 void	prep_for_push(t_stack_list **list, t_stack_list *top_node,
@@ -116,10 +116,10 @@ void	prep_for_push(t_stack_list **list, t_stack_list *top_node,
 	}
 }
 /**
- * @brief
+ * @brief Finds the node with the lowest push cost (the cheapest).
  *
- * @param
- * @return
+ * @param list The list to search for the cheapest node.
+ * @return The cheapest node, or NULL if not found.
  */
 
 t_stack_list	*get_cheapest_node(t_stack_list *list)
